@@ -1,0 +1,22 @@
+{
+  "tuning_standard": "A432",
+  "base_frequency": 432.0,
+  "carrier_ladder": [108.0, 144.0, 216.0, 324.0, 432.0],
+  "category_mapping": {
+    "sleep": 108.0,
+    "relax": 216.0,
+    "meditation": 216.0,
+    "focus": 324.0,
+    "energy": 324.0,
+    "band": 216.0
+  },
+  "tag_mapping": {
+    "delta": 108.0,
+    "deep": 108.0,
+    "theta": 144.0,
+    "alpha": 216.0,
+    "smr": 216.0,
+    "beta": 324.0,
+    "gamma": 432.0
+  }
+}
