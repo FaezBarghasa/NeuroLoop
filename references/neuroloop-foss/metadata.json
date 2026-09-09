@@ -1,0 +1,8 @@
+{
+  "name": "NeuroLoop FOSS",
+  "description": "Closed-loop bio-adaptive procedural audio environment with real-time biometric telemetry, focus timer, session data collection, export, and efficacy tuning.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

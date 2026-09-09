@@ -1,0 +1,252 @@
+[
+  {
+    "id": "open-binaural-lab",
+    "name": "Open Binaural Lab",
+    "aliases": ["OpenBinauralLab"],
+    "platform": ["desktop", "web"],
+    "oss": true,
+    "preset_access": "open/ui",
+    "categories": ["sleep", "focus", "meditation", "custom"],
+    "notes": "Reference app for open binaural generation and session design."
+  },
+  {
+    "id": "binaural-lab",
+    "name": "Binaural Lab",
+    "aliases": ["BinauralLab"],
+    "platform": ["android", "desktop"],
+    "oss": false,
+    "preset_access": "ui-only",
+    "categories": ["sleep", "focus", "relaxation", "meditation"],
+    "notes": "Preset-based binaural session app."
+  },
+  {
+    "id": "sine-isochronic",
+    "name": "Sine Isochronic",
+    "aliases": ["SineIsochronic", "Sine Isochronic Tones"],
+    "platform": ["web", "android"],
+    "oss": false,
+    "preset_access": "ui-only",
+    "categories": ["isochronic", "focus", "sleep", "energy"],
+    "notes": "Useful model for pure sine/isochronic tone generation."
+  },
+  {
+    "id": "binaural-beats-brainwaves",
+    "name": "Binaural Beats Brainwaves",
+    "aliases": ["Binaural Beats - Brainwaves"],
+    "platform": ["android", "ios"],
+    "oss": false,
+    "preset_access": "ui-only",
+    "categories": ["sleep", "focus", "meditation", "relaxation", "energy"],
+    "notes": "Typical brainwave-band preset app."
+  },
+  {
+    "id": "binaural-beats-transparent",
+    "name": "Binaural Beats",
+    "aliases": ["Binaural Beats by Transparent Corp"],
+    "platform": ["android"],
+    "oss": false,
+    "preset_access": "ui-only",
+    "categories": ["focus", "sleep", "meditation", "relaxation"],
+    "notes": "Known commercial binaural beats app."
+  },
+  {
+    "id": "gnaural",
+    "name": "Gnaural",
+    "aliases": [],
+    "platform": ["desktop"],
+    "oss": true,
+    "preset_access": "schedule-files",
+    "categories": ["meditation", "sleep", "focus", "relaxation"],
+    "notes": "Open-source binaural beat generator with schedule files."
+  },
+  {
+    "id": "sbagen",
+    "name": "SBaGen",
+    "aliases": ["Binaural Beat Generator"],
+    "platform": ["cli", "desktop"],
+    "oss": true,
+    "preset_access": "script-files",
+    "categories": ["sleep", "awake", "focus", "meditation"],
+    "notes": "Text-script based binaural beat generator."
+  },
+  {
+    "id": "brainwave-tuner",
+    "name": "Brainwave Tuner",
+    "aliases": [],
+    "platform": ["android"],
+    "oss": false,
+    "preset_access": "ui-only",
+    "categories": ["binaural", "isochronic", "sleep", "focus"],
+    "notes": "Manual frequency tuning plus preset-style sessions."
+  },
+  {
+    "id": "brainwave",
+    "name": "Brainwave",
+    "aliases": ["Brainwave - Binaural Beats"],
+    "platform": ["android", "ios"],
+    "oss": false,
+    "preset_access": "ui-only",
+    "categories": ["sleep", "study", "meditation", "focus"],
+    "notes": "Common consumer brainwave app category."
+  },
+  {
+    "id": "brainwave-music",
+    "name": "Brainwave Music - Binaural Beats",
+    "aliases": ["Brainwave Music"],
+    "platform": ["android", "ios"],
+    "oss": false,
+    "preset_access": "ui-only",
+    "categories": ["sleep", "relax", "focus", "energy"],
+    "notes": "Music + binaural layer style app."
+  },
+  {
+    "id": "binaural-beats-generator",
+    "name": "Binaural Beats Generator",
+    "aliases": [],
+    "platform": ["android", "ios"],
+    "oss": false,
+    "preset_access": "ui-only",
+    "categories": ["custom", "sleep", "focus", "meditation"],
+    "notes": "Generator-style app with manual frequency control."
+  },
+  {
+    "id": "binaural-beats-therapy",
+    "name": "Binaural Beats Therapy",
+    "aliases": [],
+    "platform": ["android"],
+    "oss": false,
+    "preset_access": "ui-only",
+    "categories": ["sleep", "calm", "focus", "relaxation"],
+    "notes": "Wellness-oriented binaural session app."
+  },
+  {
+    "id": "isochronic-tones-brainwave",
+    "name": "Isochronic Tones - Brainwave",
+    "aliases": ["Isochronic Tones"],
+    "platform": ["android", "ios"],
+    "oss": false,
+    "preset_access": "ui-only",
+    "categories": ["isochronic", "sleep", "focus", "energy"],
+    "notes": "Useful for pulse-based presets."
+  },
+  {
+    "id": "brainwave-isochronic",
+    "name": "Brainwave Isochronic Tones",
+    "aliases": [],
+    "platform": ["android"],
+    "oss": false,
+    "preset_access": "ui-only",
+    "categories": ["sleep", "focus", "energy", "meditation"],
+    "notes": "Pulse-only entrainment presets."
+  },
+  {
+    "id": "brain-focus",
+    "name": "Brain Focus",
+    "aliases": [],
+    "platform": ["android", "ios"],
+    "oss": false,
+    "preset_access": "ui-only",
+    "categories": ["focus", "study", "attention"],
+    "notes": "Focus/study oriented presets."
+  },
+  {
+    "id": "binaural-beats-booster",
+    "name": "Binaural Beats Booster",
+    "aliases": [],
+    "platform": ["android"],
+    "oss": false,
+    "preset_access": "ui-only",
+    "categories": ["energy", "focus", "sleep", "relaxation"],
+    "notes": "Preset booster-style app."
+  },
+  {
+    "id": "brain-waves",
+    "name": "Brain Waves",
+    "aliases": ["Brain Waves - Binaural Beats"],
+    "platform": ["android", "ios"],
+    "oss": false,
+    "preset_access": "ui-only",
+    "categories": ["meditation", "sleep", "focus", "relaxation"],
+    "notes": "Generic brainwave preset app."
+  },
+  {
+    "id": "mynoise-binaural",
+    "name": "myNoise Binaural Beat Machine",
+    "aliases": ["myNoise"],
+    "platform": ["web", "ios", "android"],
+    "oss": false,
+    "preset_access": "partial",
+    "categories": ["binaural", "ambient", "focus", "sleep"],
+    "notes": "Slider-based sound generator with binaural options."
+  },
+  {
+    "id": "brainfm",
+    "name": "Brain.fm",
+    "aliases": [],
+    "platform": ["web", "ios", "android"],
+    "oss": false,
+    "preset_access": "closed",
+    "categories": ["focus", "relax", "sleep"],
+    "notes": "AI-generated functional music, not direct frequency presets."
+  },
+  {
+    "id": "focus-at-will",
+    "name": "Focus@Will",
+    "aliases": ["Focus At Will"],
+    "platform": ["web", "ios", "android"],
+    "oss": false,
+    "preset_access": "closed",
+    "categories": ["focus", "study", "work"],
+    "notes": "Commercial focus music channels."
+  },
+  {
+    "id": "endel",
+    "name": "Endel",
+    "aliases": [],
+    "platform": ["ios", "android", "web"],
+    "oss": false,
+    "preset_access": "closed",
+    "categories": ["focus", "sleep", "relax"],
+    "notes": "Adaptive soundscapes; useful UX inspiration."
+  },
+  {
+    "id": "hemi-sync",
+    "name": "Hemi-Sync",
+    "aliases": ["Monroe Institute Hemi-Sync"],
+    "platform": ["audio", "desktop", "mobile"],
+    "oss": false,
+    "preset_access": "closed",
+    "categories": ["meditation", "sleep", "focus"],
+    "notes": "Proprietary binaural audio system."
+  },
+  {
+    "id": "neuro-programmer",
+    "name": "Neuro-Programmer",
+    "aliases": ["Neuro-Programmer 3"],
+    "platform": ["desktop"],
+    "oss": false,
+    "preset_access": "closed",
+    "categories": ["focus", "sleep", "meditation", "relaxation"],
+    "notes": "Legacy desktop brainwave session tool."
+  },
+  {
+    "id": "binaural-beat-machine",
+    "name": "Binaural Beat Machine",
+    "aliases": [],
+    "platform": ["web"],
+    "oss": false,
+    "preset_access": "partial",
+    "categories": ["binaural", "focus", "sleep", "meditation"],
+    "notes": "Web generator style interface."
+  },
+  {
+    "id": "audacity-generator",
+    "name": "Audacity Tone/Binaural Generation",
+    "aliases": [],
+    "platform": ["desktop"],
+    "oss": true,
+    "preset_access": "manual",
+    "categories": ["custom", "export", "rendering"],
+    "notes": "Useful for offline rendering and waveform inspection."
+  }
+]

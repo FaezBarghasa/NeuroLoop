@@ -1,0 +1,21 @@
+[
+  {"state":"sleep.onset","preset":"sleep.onset.alpha-theta","priority":10},
+  {"state":"sleep.deep","preset":"sleep.deep.delta","priority":10},
+  {"state":"sleep.maintenance","preset":"sleep.maintenance.theta","priority":8},
+  {"state":"sleep.rem","preset":"sleep.rem-lucid","priority":5},
+  {"state":"sleep.wake","preset":"sleep.gentle-wake","priority":9},
+  {"state":"focus.deep","preset":"focus.deep-work-beta","priority":10},
+  {"state":"focus.coding","preset":"focus.coding-smr","priority":9},
+  {"state":"focus.reading","preset":"focus.reading-alpha-beta","priority":8},
+  {"state":"focus.study","preset":"focus.study-beta","priority":9},
+  {"state":"focus.calm","preset":"focus.low-beta-calm","priority":8},
+  {"state":"focus.gamma","preset":"focus.gamma-burst","priority":5},
+  {"state":"energy.morning","preset":"morning.sunrise-alpha-beta","priority":10},
+  {"state":"energy.alert","preset":"morning.iso-alert","priority":8},
+  {"state":"energy.preworkout","preset":"preworkout.high-beta","priority":7},
+  {"state":"energy.reset","preset":"midday.reset-alpha","priority":8},
+  {"state":"relax.high_arousal","preset":"calm.low-alpha","priority":9},
+  {"state":"relax.evening","preset":"relax.evening-theta","priority":8},
+  {"state":"meditation.alpha","preset":"meditation.alpha","priority":8},
+  {"state":"meditation.theta","preset":"meditation.theta","priority":7}
+]
