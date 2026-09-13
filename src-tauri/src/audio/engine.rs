@@ -1,7 +1,7 @@
 use super::oscillator::{Modality, OscillatorState};
 use crate::tuning::a432::snap_to_a432_ladder;
 use cpal::traits::{DeviceTrait, HostTrait, StreamTrait};
-use cpal::{SampleFormat, Stream};
+use cpal::{SampleFormat, Stream, StreamConfig};
 use std::sync::{Arc, Mutex};
 
 pub struct AudioEngine {
@@ -10,7 +10,6 @@ pub struct AudioEngine {
     _stream: Option<Stream>,
 }
 
-// Ensure AudioEngine can be shared in Tauri state
 unsafe impl Send for AudioEngine {}
 unsafe impl Sync for AudioEngine {}
 
@@ -21,12 +20,14 @@ impl AudioEngine {
             .default_output_device()
             .ok_or_else(|| "No audio output device found".to_string())?;
 
-        let config = device
+        let supported_config = device
             .default_output_config()
             .map_err(|e| format!("Failed to get default output config: {}", e))?;
 
-        let sample_rate = config.sample_rate().0 as f32;
-        let channels = config.channels() as usize;
+        let sample_format = supported_config.sample_format();
+        let stream_config: StreamConfig = supported_config.into();
+        let sample_rate = stream_config.sample_rate as f32;
+        let channels = stream_config.channels as usize;
 
         let osc_state = Arc::new(Mutex::new(OscillatorState::new(
             sample_rate,
@@ -41,9 +42,9 @@ impl AudioEngine {
 
         let err_fn = |err| eprintln!("NeuroLoop audio stream error: {}", err);
 
-        let stream = match config.sample_format() {
+        let stream = match sample_format {
             SampleFormat::F32 => device.build_output_stream(
-                &config.into(),
+                &stream_config,
                 move |data: &mut [f32], _: &cpal::OutputCallbackInfo| {
                     let playing = *playing_clone.lock().unwrap_or_else(|e| e.into_inner());
                     if !playing {
@@ -72,7 +73,7 @@ impl AudioEngine {
                 None,
             ),
             SampleFormat::I16 => device.build_output_stream(
-                &config.into(),
+                &stream_config,
                 move |data: &mut [i16], _: &cpal::OutputCallbackInfo| {
                     let playing = *playing_clone.lock().unwrap_or_else(|e| e.into_inner());
                     if !playing {
