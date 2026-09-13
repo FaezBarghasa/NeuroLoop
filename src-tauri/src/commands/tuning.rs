@@ -7,10 +7,10 @@ use tauri::State;
 pub async fn get_tuning_profile(
     store: State<'_, Arc<NeuroStore>>,
 ) -> Result<TuningProfile, String> {
-    if let Ok(Some(record)) = store.get_active_tuning_profile().await {
-        if let Ok(profile) = serde_json::from_value::<TuningProfile>(record.profile_json) {
-            return Ok(profile);
-        }
+    if let Ok(Some(record)) = store.get_active_tuning_profile().await
+        && let Ok(profile) = serde_json::from_value::<TuningProfile>(record.profile_json)
+    {
+        return Ok(profile);
     }
     Ok(TuningProfile::default())
 }
