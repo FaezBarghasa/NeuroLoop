@@ -110,3 +110,27 @@ impl StateClassifier {
         (self.current_state, confidence)
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_hysteresis_dwell_prevention() {
+        let mut classifier = StateClassifier::new();
+        assert_eq!(classifier.current_state, InferredState::Awake);
+
+        // Single cycle of stressed condition (HR > baseline + 12)
+        let (state, _) = classifier.classify(Some(90.0), Some(40.0), Some(0.0), false);
+        // Should NOT immediately transition due to min_dwell_cycles = 3
+        assert_eq!(state, InferredState::Awake);
+
+        // Cycle 2
+        let (state, _) = classifier.classify(Some(90.0), Some(40.0), Some(0.0), false);
+        assert_eq!(state, InferredState::Awake);
+
+        // Cycle 3 - meets threshold
+        let (state, _) = classifier.classify(Some(90.0), Some(40.0), Some(0.0), false);
+        assert_eq!(state, InferredState::Stressed);
+    }
+}

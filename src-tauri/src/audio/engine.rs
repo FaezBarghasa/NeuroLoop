@@ -2,8 +2,8 @@ use super::oscillator::{Modality, OscillatorState};
 use crate::tuning::a432::snap_to_a432_ladder;
 use cpal::traits::{DeviceTrait, HostTrait, StreamTrait};
 use cpal::{SampleFormat, Stream, StreamConfig};
-use std::sync::atomic::{AtomicBool, AtomicU32, AtomicU64, AtomicU8, Ordering};
 use std::sync::Arc;
+use std::sync::atomic::{AtomicBool, AtomicU8, AtomicU32, AtomicU64, Ordering};
 
 pub struct AudioParams {
     pub is_playing: AtomicBool,
@@ -68,7 +68,9 @@ impl AudioEngine {
         let device = match host.default_output_device() {
             Some(dev) => dev,
             None => {
-                eprintln!("Warning: No audio output device found at startup. Running in mock/standby mode.");
+                eprintln!(
+                    "Warning: No audio output device found at startup. Running in mock/standby mode."
+                );
                 return Ok(Self {
                     params,
                     _stream: None,
@@ -105,10 +107,13 @@ impl AudioEngine {
 
                     let current_ver = params_clone.version.load(Ordering::Acquire);
                     if current_ver != last_version {
-                        let carrier = f32::from_bits(params_clone.target_carrier.load(Ordering::Relaxed));
+                        let carrier =
+                            f32::from_bits(params_clone.target_carrier.load(Ordering::Relaxed));
                         let beat = f32::from_bits(params_clone.target_beat.load(Ordering::Relaxed));
-                        let vol = f32::from_bits(params_clone.target_volume.load(Ordering::Relaxed));
-                        let ramp_sec = f32::from_bits(params_clone.ramp_duration.load(Ordering::Relaxed));
+                        let vol =
+                            f32::from_bits(params_clone.target_volume.load(Ordering::Relaxed));
+                        let ramp_sec =
+                            f32::from_bits(params_clone.ramp_duration.load(Ordering::Relaxed));
                         let mod_u8 = params_clone.modality.load(Ordering::Relaxed);
 
                         osc.carrier_ramp.set_target(carrier, ramp_sec, sample_rate);
@@ -148,10 +153,13 @@ impl AudioEngine {
 
                     let current_ver = params_clone.version.load(Ordering::Acquire);
                     if current_ver != last_version {
-                        let carrier = f32::from_bits(params_clone.target_carrier.load(Ordering::Relaxed));
+                        let carrier =
+                            f32::from_bits(params_clone.target_carrier.load(Ordering::Relaxed));
                         let beat = f32::from_bits(params_clone.target_beat.load(Ordering::Relaxed));
-                        let vol = f32::from_bits(params_clone.target_volume.load(Ordering::Relaxed));
-                        let ramp_sec = f32::from_bits(params_clone.ramp_duration.load(Ordering::Relaxed));
+                        let vol =
+                            f32::from_bits(params_clone.target_volume.load(Ordering::Relaxed));
+                        let ramp_sec =
+                            f32::from_bits(params_clone.ramp_duration.load(Ordering::Relaxed));
                         let mod_u8 = params_clone.modality.load(Ordering::Relaxed);
 
                         osc.carrier_ramp.set_target(carrier, ramp_sec, sample_rate);

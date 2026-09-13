@@ -59,3 +59,31 @@ impl BiometricFilter {
         Some(sorted[sorted.len() / 2])
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_hr_rejection_and_smoothing() {
+        let mut filter = BiometricFilter::new(5);
+        // Out of bounds
+        assert_eq!(filter.filter_hr(10.0), None);
+        assert_eq!(filter.filter_hr(250.0), None);
+
+        // Valid values
+        let s1 = filter.filter_hr(70.0).unwrap();
+        assert!((s1 - 70.0).abs() < 0.01);
+
+        let s2 = filter.filter_hr(75.0).unwrap();
+        assert!(s2 > 70.0 && s2 < 75.0);
+    }
+
+    #[test]
+    fn test_hrv_rejection() {
+        let mut filter = BiometricFilter::new(3);
+        assert_eq!(filter.filter_hrv(2.0), None);
+        assert_eq!(filter.filter_hrv(400.0), None);
+        assert!(filter.filter_hrv(45.0).is_some());
+    }
+}
