@@ -44,7 +44,6 @@ export class NeuroDspEngine {
   private glideDurationSec: number = 5.0;
   private isGliding: boolean = false;
   private isCrossfading: boolean = false;
-  private crossfadeProgress: number = 1.0;
   private glideProgressCallback?: (currentBeatHz: number, progress: number, isCrossfading?: boolean) => void;
 
   constructor() {
@@ -740,13 +739,13 @@ export class NeuroDspEngine {
 
   public getAnalyserData(dataArray: Uint8Array): void {
     if (this.analyser) {
-      this.analyser.getByteTimeDomainData(dataArray);
+      this.analyser.getByteTimeDomainData(dataArray as any);
     }
   }
 
   public getFrequencyData(dataArray: Uint8Array): void {
     if (this.analyser) {
-      this.analyser.getByteFrequencyData(dataArray);
+      this.analyser.getByteFrequencyData(dataArray as any);
     }
   }
 }

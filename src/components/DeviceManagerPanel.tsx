@@ -5,22 +5,16 @@ import {
   Watch,
   Activity,
   Bluetooth,
-  ShieldCheck,
   Zap,
   CheckCircle2,
-  AlertCircle,
   TerminalSquare,
   Radio,
-  Share2,
   RefreshCw,
   Copy,
   Check,
   Upload,
   ExternalLink,
-  Layers,
-  Sparkles,
 } from 'lucide-react';
-import { BiometricSourceType } from '../types';
 import { googleHealth } from '../services/googleHealthService';
 import { gadgetbridge } from '../services/gadgetbridgeService';
 import { triggerHaptic } from '../utils/haptics';
@@ -507,17 +501,28 @@ export const DeviceManagerPanel: React.FC = () => {
       {/* TAB 3: DIRECT BLUETOOTH & GATT LOG */}
       {activeSubTab === 'ble_bridge' && (
         <div className="backdrop-blur-md bg-zinc-900/40 border border-zinc-800/80 rounded-2xl p-4 sm:p-5 space-y-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <Bluetooth className="w-5 h-5 text-blue-400" />
-              <h3 className="text-sm font-bold text-zinc-100">Web Bluetooth GATT Bridge & Cryptographic Engine</h3>
-            </div>
+          <div className="flex flex-wrap items-center gap-2">
             <button
-              onClick={connectRealWebBluetooth}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-blue-500 hover:bg-blue-400 text-zinc-950 font-bold text-xs transition-all shadow-md active:scale-95 cursor-pointer"
+              onClick={startBleScan}
+              disabled={isBleScanning}
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-zinc-950 font-bold text-xs transition-all shadow-md active:scale-95 cursor-pointer ${
+                isBleScanning ? 'bg-amber-400 opacity-80' : 'bg-blue-500 hover:bg-blue-400'
+              }`}
             >
               <Bluetooth className="w-3.5 h-3.5" />
-              <span>Pair Bluetooth Hardware</span>
+              <span>{isBleScanning ? 'Scanning BLE...' : isBleConnected ? 'BLE Connected' : 'Scan BLE Devices'}</span>
+            </button>
+            <button
+              onClick={sendAtGetSecret}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs transition-all cursor-pointer"
+            >
+              <span>Verify AT Secret</span>
+            </button>
+            <button
+              onClick={fetchSleepHistoryBle}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-semibold text-xs transition-all cursor-pointer"
+            >
+              <span>Fetch BLE Sleep</span>
             </button>
           </div>
 

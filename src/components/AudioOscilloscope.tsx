@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { dspEngine } from '../audio/dspEngine';
 import { useNeuroStore } from '../store/useNeuroStore';
-import { Sparkles, RefreshCw, Play, Volume2 } from 'lucide-react';
+import { RefreshCw, Play } from 'lucide-react';
 import { BRAINWAVE_BANDS, BrainwaveBandName } from '../types';
 
 export const AudioOscilloscope: React.FC = () => {

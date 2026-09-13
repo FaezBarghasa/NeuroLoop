@@ -227,6 +227,25 @@ export const BioLogicClosedLoop: React.FC = () => {
             />
           </div>
 
+          <div>
+            <div className="flex justify-between text-xs mb-1.5">
+              <span className="text-zinc-300">Hysteresis Deadband</span>
+              <span className="font-mono text-emerald-400 font-semibold">±{hysteresisDeadbandBPM} BPM</span>
+            </div>
+            <input
+              type="range"
+              min="2"
+              max="10"
+              step="1"
+              value={hysteresisDeadbandBPM}
+              onChange={(e) => {
+                triggerHaptic('selection');
+                setHysteresisDeadband(parseInt(e.target.value, 10));
+              }}
+              className="w-full h-2 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-emerald-400"
+            />
+          </div>
+
           <div className="grid grid-cols-3 gap-2">
             <button
               onClick={() => {
