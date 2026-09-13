@@ -34,9 +34,8 @@ pub fn run() {
             });
 
             let audio_engine = AudioEngine::new().unwrap_or_else(|e| {
-                eprintln!("Warning: Audio engine fallback: {}", e);
-                // Handle fallback if running without physical sound card
-                panic!("Failed to init CPAL engine: {}", e);
+                eprintln!("Warning: Failed to initialize physical audio output device: {}. Using standby mode.", e);
+                AudioEngine::standby()
             });
 
             app.manage(Arc::new(store));

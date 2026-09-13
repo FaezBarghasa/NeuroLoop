@@ -80,22 +80,26 @@ pub fn fade_to_preset(
 
 #[tauri::command]
 pub fn get_audio_status(engine: State<'_, Arc<AudioEngine>>) -> Result<AudioStatus, String> {
-    let is_playing = *engine.is_playing.lock().map_err(|e| e.to_string())?;
-    let osc = engine.state.lock().map_err(|e| e.to_string())?;
+    use std::sync::atomic::Ordering;
+    let is_playing = engine.params.is_playing.load(Ordering::Relaxed);
+    let carrier_hz = f32::from_bits(engine.params.target_carrier.load(Ordering::Relaxed));
+    let beat_hz = f32::from_bits(engine.params.target_beat.load(Ordering::Relaxed));
+    let volume = f32::from_bits(engine.params.target_volume.load(Ordering::Relaxed));
+    let modality_u8 = engine.params.modality.load(Ordering::Relaxed);
 
-    let modality = match osc.modality {
-        Modality::Binaural => "binaural",
-        Modality::Isochronic => "isochronic",
-        Modality::Monaural => "monaural",
-        Modality::Mixed => "mixed",
+    let modality = match modality_u8 {
+        1 => "isochronic",
+        2 => "monaural",
+        3 => "mixed",
+        _ => "binaural",
     }
     .to_string();
 
     Ok(AudioStatus {
         is_playing,
-        carrier_hz: osc.carrier_ramp.current,
-        beat_hz: osc.beat_ramp.current,
-        volume: osc.volume_ramp.current,
+        carrier_hz,
+        beat_hz,
+        volume,
         modality,
     })
 }

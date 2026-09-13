@@ -19,8 +19,11 @@ pub enum InferredState {
 
 pub struct StateClassifier {
     pub current_state: InferredState,
+    pub candidate_state: InferredState,
+    pub candidate_count: usize,
     pub confidence: f32,
     pub baseline: PersonalBaseline,
+    pub min_dwell_cycles: usize,
 }
 
 impl Default for StateClassifier {
@@ -33,8 +36,11 @@ impl StateClassifier {
     pub fn new() -> Self {
         Self {
             current_state: InferredState::Awake,
+            candidate_state: InferredState::Awake,
+            candidate_count: 0,
             confidence: 0.5,
             baseline: PersonalBaseline::default(),
+            min_dwell_cycles: 3, // Require 3 consecutive cycles before flipping state
         }
     }
 
@@ -48,8 +54,8 @@ impl StateClassifier {
         let hr = hr.unwrap_or(self.baseline.resting_hr);
         let mov = movement.unwrap_or(0.0);
 
-        // State inference rules with hysteresis
-        let new_state = if is_nighttime && mov < 0.05 && hr < (self.baseline.sleep_hr + 4.0) {
+        // State inference rules
+        let instant_state = if is_nighttime && mov < 0.05 && hr < (self.baseline.sleep_hr + 4.0) {
             if hr < self.baseline.sleep_hr - 2.0 {
                 InferredState::SleepDeep
             } else if hr < self.baseline.sleep_hr + 2.0 {
@@ -75,18 +81,32 @@ impl StateClassifier {
             InferredState::Awake
         };
 
+        // Apply hysteresis: only transition if candidate remains steady
+        if instant_state == self.current_state {
+            self.candidate_state = instant_state;
+            self.candidate_count = 0;
+        } else if instant_state == self.candidate_state {
+            self.candidate_count += 1;
+            if self.candidate_count >= self.min_dwell_cycles {
+                self.current_state = instant_state;
+                self.candidate_count = 0;
+            }
+        } else {
+            self.candidate_state = instant_state;
+            self.candidate_count = 1;
+        }
+
         // Confidence estimation
         let confidence = if movement.is_some() && hrv.is_some() {
-            0.85
+            0.90
         } else if movement.is_some() {
             0.75
         } else {
             0.60
         };
 
-        self.current_state = new_state;
         self.confidence = confidence;
 
-        (new_state, confidence)
+        (self.current_state, confidence)
     }
 }
