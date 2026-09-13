@@ -13,7 +13,7 @@ import { CarrierMusicPlayer } from './components/CarrierMusicPlayer';
 import { MobileQuickPlayer } from './components/MobileQuickPlayer';
 import { BottomNav } from './components/BottomNav';
 import { DeviceManagerPanel } from './components/DeviceManagerPanel';
-import { Dashboard } from './components/Dashboard';
+import { DataExport } from './components/DataExport';
 
 export default function App() {
   const { activeTab, simulateBiometricTick, theme } = useNeuroStore();
