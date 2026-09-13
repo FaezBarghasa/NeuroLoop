@@ -116,6 +116,30 @@ export const FeedbackDialog: React.FC<FeedbackDialogProps> = ({
           >
             ⚠️ Discomfort
           </button>
+
+          <button
+            type="button"
+            onClick={() => setTooIntense(!tooIntense)}
+            className={`p-3 rounded-xl border text-sm font-medium transition-all text-left ${
+              tooIntense
+                ? "bg-amber-950/60 border-amber-500/50 text-amber-300"
+                : "bg-slate-800/50 border-slate-700 text-slate-400"
+            }`}
+          >
+            ⚡ Too Intense
+          </button>
+
+          <button
+            type="button"
+            onClick={() => setTooQuiet(!tooQuiet)}
+            className={`p-3 rounded-xl border text-sm font-medium transition-all text-left ${
+              tooQuiet
+                ? "bg-sky-950/60 border-sky-500/50 text-sky-300"
+                : "bg-slate-800/50 border-slate-700 text-slate-400"
+            }`}
+          >
+            🔉 Too Quiet
+          </button>
         </div>
 
         {/* Tags */}
