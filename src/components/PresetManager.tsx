@@ -12,13 +12,7 @@ import {
   Zap,
   Activity,
   Heart,
-  Clock,
-  Waves,
-  Sliders,
   X,
-  Volume2,
-  Tag,
-  Filter,
 } from 'lucide-react';
 import { triggerHaptic } from '../utils/haptics';
 
@@ -475,6 +469,24 @@ export const PresetManager: React.FC = () => {
                     className="w-full h-1.5 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-emerald-400"
                   />
                 </div>
+
+                {customNoiseType !== 'none' && (
+                  <div className="space-y-1">
+                    <div className="flex justify-between text-zinc-400">
+                      <span>Noise Volume</span>
+                      <span className="font-mono text-emerald-400">{Math.round(customNoiseVol * 100)}%</span>
+                    </div>
+                    <input
+                      type="range"
+                      min={0.0}
+                      max={1.0}
+                      step={0.05}
+                      value={customNoiseVol}
+                      onChange={(e) => setCustomNoiseVol(parseFloat(e.target.value))}
+                      className="w-full h-1.5 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-emerald-400"
+                    />
+                  </div>
+                )}
               </div>
 
               <div className="flex items-center justify-end gap-2 pt-2">

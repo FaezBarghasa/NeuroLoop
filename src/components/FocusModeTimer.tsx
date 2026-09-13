@@ -7,11 +7,7 @@ import {
   Square,
   BellOff,
   Bell,
-  Sparkles,
   Zap,
-  CheckCircle2,
-  Clock,
-  Sliders,
 } from 'lucide-react';
 import { triggerHaptic } from '../utils/haptics';
 
@@ -30,7 +26,6 @@ export const FocusModeTimer: React.FC = () => {
   const [selectedMinutes, setSelectedMinutes] = useState<number>(25);
   const [selectedPresetId, setSelectedPresetId] = useState<string>('focus.deep-work-beta');
   const [dndToggle, setDndToggle] = useState<boolean>(true);
-  const [showCustomConfig, setShowCustomConfig] = useState<boolean>(false);
 
   const isHighContrast = theme === 'high_contrast';
 

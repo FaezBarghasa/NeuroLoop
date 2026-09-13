@@ -249,7 +249,6 @@ export class NeuroDspEngine {
     }
 
     if (!this.ctx || !this.isochronicPulsarGain) return;
-    const ctx = this.ctx;
 
     // Period in milliseconds
     const periodMs = Math.max(10, 1000 / Math.max(0.2, rateHz));

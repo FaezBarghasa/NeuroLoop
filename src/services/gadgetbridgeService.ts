@@ -52,6 +52,10 @@ export class GadgetbridgeService {
     return GadgetbridgeService.instance;
   }
 
+  public isListeningActive(): boolean {
+    return this.isListening;
+  }
+
   /**
    * Register listener for incoming Gadgetbridge Android broadcasts
    */

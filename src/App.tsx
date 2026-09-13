@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useNeuroStore } from './store/useNeuroStore';
 import { Navbar } from './components/Navbar';
 import { BioAlertBanner } from './components/BioAlertBanner';

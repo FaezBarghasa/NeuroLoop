@@ -8,7 +8,6 @@ import {
   Clock,
   Waves,
   Download,
-  Share2,
   Copy,
   Check,
   FileJson,

@@ -503,14 +503,20 @@ export const DeviceManagerPanel: React.FC = () => {
         <div className="backdrop-blur-md bg-zinc-900/40 border border-zinc-800/80 rounded-2xl p-4 sm:p-5 space-y-4">
           <div className="flex flex-wrap items-center gap-2">
             <button
+              onClick={connectRealWebBluetooth}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-blue-500 hover:bg-blue-400 text-zinc-950 font-bold text-xs transition-all shadow-md active:scale-95 cursor-pointer"
+            >
+              <Bluetooth className="w-3.5 h-3.5" />
+              <span>Pair Web Bluetooth</span>
+            </button>
+            <button
               onClick={startBleScan}
               disabled={isBleScanning}
               className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-zinc-950 font-bold text-xs transition-all shadow-md active:scale-95 cursor-pointer ${
-                isBleScanning ? 'bg-amber-400 opacity-80' : 'bg-blue-500 hover:bg-blue-400'
+                isBleScanning ? 'bg-amber-400 opacity-80' : 'bg-zinc-800 hover:bg-zinc-700 text-zinc-100 border border-zinc-700'
               }`}
             >
-              <Bluetooth className="w-3.5 h-3.5" />
-              <span>{isBleScanning ? 'Scanning BLE...' : isBleConnected ? 'BLE Connected' : 'Scan BLE Devices'}</span>
+              <span>{isBleScanning ? 'Scanning...' : isBleConnected ? 'BLE Connected' : 'Simulate Scan'}</span>
             </button>
             <button
               onClick={sendAtGetSecret}

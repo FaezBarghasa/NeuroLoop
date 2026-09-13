@@ -510,7 +510,7 @@ export const useNeuroStore = create<NeuroState>((set, get) => {
         get().togglePlay();
       }
 
-      set((s) => ({
+      set({
         focusTimer: {
           isActive: true,
           isPaused: false,
@@ -522,7 +522,7 @@ export const useNeuroStore = create<NeuroState>((set, get) => {
         },
         sessionStartTime: Date.now(),
         currentSessionPoints: [],
-      }));
+      });
 
       startTelemetrySampling();
 

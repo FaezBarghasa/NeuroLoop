@@ -22,13 +22,9 @@ import {
   Check,
   X,
   Zap,
-  Clock,
   ShieldCheck,
   Brain,
-  Sliders,
-  Share2,
   Calendar,
-  Layers,
   FileSpreadsheet,
   FileCode,
   RefreshCw,
@@ -369,7 +365,7 @@ export const SessionSummaryModal: React.FC = () => {
                         color: '#f4f4f5',
                       }}
                       labelFormatter={(label) => `Session Time: ${label}`}
-                      formatter={(val: number | string | undefined, name: string | undefined) => {
+                      formatter={(val: any, name: any) => {
                         if (val === undefined) return ['', ''];
                         if (name === 'Target Beat (Hz)') return [`${val} Hz`, name];
                         if (name === 'Stress Index') return [`${val}%`, name];
