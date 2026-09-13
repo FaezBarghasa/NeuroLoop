@@ -1,4 +1,4 @@
-use crate::analytics::{EffectivenessScore, TuningProfile};
+use crate::analytics::TuningProfile;
 use crate::data::{EffectivenessScore as DbScore, NeuroStore, TuningProfileRecord};
 use std::sync::Arc;
 use tauri::State;
@@ -28,14 +28,20 @@ pub async fn save_tuning_profile(
         active: true,
         profile_json,
     };
-    store.save_tuning_profile(record).await.map_err(|e| e.to_string())
+    store
+        .save_tuning_profile(record)
+        .await
+        .map_err(|e| e.to_string())
 }
 
 #[tauri::command]
 pub async fn get_effectiveness_scores(
     store: State<'_, Arc<NeuroStore>>,
 ) -> Result<Vec<DbScore>, String> {
-    store.get_effectiveness_scores().await.map_err(|e| e.to_string())
+    store
+        .get_effectiveness_scores()
+        .await
+        .map_err(|e| e.to_string())
 }
 
 #[tauri::command]
@@ -43,5 +49,8 @@ pub async fn record_effectiveness_score(
     store: State<'_, Arc<NeuroStore>>,
     score: DbScore,
 ) -> Result<DbScore, String> {
-    store.record_effectiveness(score).await.map_err(|e| e.to_string())
+    store
+        .record_effectiveness(score)
+        .await
+        .map_err(|e| e.to_string())
 }

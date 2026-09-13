@@ -1,9 +1,9 @@
 use serde::{Deserialize, Serialize};
-use surrealdb::engine::local::{Db, SurrealKv};
-use surrealdb::Surreal;
 use std::io::Write;
-use zip::write::SimpleFileOptions;
+use surrealdb::Surreal;
+use surrealdb::engine::local::{Db, SurrealKv};
 use zip::ZipWriter;
+use zip::write::SimpleFileOptions;
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct BiometricSample {
@@ -138,27 +138,65 @@ impl NeuroStore {
         Ok(Self { db })
     }
 
-    pub async fn ingest_sample(&self, sample: BiometricSample) -> Result<BiometricSample, surrealdb::Error> {
-        let created: Option<BiometricSample> = self.db.create("biometric_samples").content(sample).await?;
-        created.ok_or_else(|| surrealdb::Error::Db(surrealdb::error::Db::Internal("Failed to insert sample".into())))
+    pub async fn ingest_sample(
+        &self,
+        sample: BiometricSample,
+    ) -> Result<BiometricSample, surrealdb::Error> {
+        let val =
+            serde_json::to_value(&sample).map_err(|e| surrealdb::Error::thrown(e.to_string()))?;
+        let mut response = self
+            .db
+            .query("CREATE biometric_samples CONTENT $data")
+            .bind(("data", val))
+            .await?;
+        let raw: Vec<serde_json::Value> = response.take(0).unwrap_or_default();
+        raw.into_iter()
+            .next()
+            .and_then(|v| serde_json::from_value(v).ok())
+            .ok_or_else(|| surrealdb::Error::thrown("Failed to insert sample".to_string()))
     }
 
-    pub async fn get_recent_samples(&self, limit: usize) -> Result<Vec<BiometricSample>, surrealdb::Error> {
+    pub async fn get_recent_samples(
+        &self,
+        limit: usize,
+    ) -> Result<Vec<BiometricSample>, surrealdb::Error> {
         let mut response = self
             .db
             .query("SELECT * FROM biometric_samples ORDER BY timestamp DESC LIMIT $limit")
             .bind(("limit", limit))
             .await?;
-        let samples: Vec<BiometricSample> = response.take(0)?;
+        let raw: Vec<serde_json::Value> = response.take(0)?;
+        let samples: Vec<BiometricSample> = raw
+            .into_iter()
+            .filter_map(|v| serde_json::from_value(v).ok())
+            .collect();
         Ok(samples)
     }
 
-    pub async fn start_audio_session(&self, session: AudioSession) -> Result<AudioSession, surrealdb::Error> {
-        let created: Option<AudioSession> = self.db.create("audio_sessions").content(session).await?;
-        created.ok_or_else(|| surrealdb::Error::Db(surrealdb::error::Db::Internal("Failed to start audio session".into())))
+    pub async fn start_audio_session(
+        &self,
+        session: AudioSession,
+    ) -> Result<AudioSession, surrealdb::Error> {
+        let val =
+            serde_json::to_value(&session).map_err(|e| surrealdb::Error::thrown(e.to_string()))?;
+        let mut response = self
+            .db
+            .query("CREATE audio_sessions CONTENT $data")
+            .bind(("data", val))
+            .await?;
+        let raw: Vec<serde_json::Value> = response.take(0).unwrap_or_default();
+        raw.into_iter()
+            .next()
+            .and_then(|v| serde_json::from_value(v).ok())
+            .ok_or_else(|| surrealdb::Error::thrown("Failed to start audio session".to_string()))
     }
 
-    pub async fn end_audio_session(&self, session_id: &str, end_time: &str, reason: &str) -> Result<(), surrealdb::Error> {
+    pub async fn end_audio_session(
+        &self,
+        session_id: &str,
+        end_time: &str,
+        reason: &str,
+    ) -> Result<(), surrealdb::Error> {
         self.db
             .query("UPDATE type::thing('audio_sessions', $id) SET ended_at = $ended_at, end_reason = $reason")
             .bind(("id", session_id.to_string()))
@@ -168,64 +206,187 @@ impl NeuroStore {
         Ok(())
     }
 
-    pub async fn get_audio_sessions(&self, limit: usize) -> Result<Vec<AudioSession>, surrealdb::Error> {
+    pub async fn get_audio_sessions(
+        &self,
+        limit: usize,
+    ) -> Result<Vec<AudioSession>, surrealdb::Error> {
         let mut response = self
             .db
             .query("SELECT * FROM audio_sessions ORDER BY started_at DESC LIMIT $limit")
             .bind(("limit", limit))
             .await?;
-        let sessions: Vec<AudioSession> = response.take(0)?;
+        let raw: Vec<serde_json::Value> = response.take(0)?;
+        let sessions: Vec<AudioSession> = raw
+            .into_iter()
+            .filter_map(|v| serde_json::from_value(v).ok())
+            .collect();
         Ok(sessions)
     }
 
-    pub async fn record_state_event(&self, event: StateEvent) -> Result<StateEvent, surrealdb::Error> {
-        let created: Option<StateEvent> = self.db.create("state_events").content(event).await?;
-        created.ok_or_else(|| surrealdb::Error::Db(surrealdb::error::Db::Internal("Failed to record state event".into())))
+    pub async fn record_state_event(
+        &self,
+        event: StateEvent,
+    ) -> Result<StateEvent, surrealdb::Error> {
+        let val =
+            serde_json::to_value(&event).map_err(|e| surrealdb::Error::thrown(e.to_string()))?;
+        let mut response = self
+            .db
+            .query("CREATE state_events CONTENT $data")
+            .bind(("data", val))
+            .await?;
+        let raw: Vec<serde_json::Value> = response.take(0).unwrap_or_default();
+        raw.into_iter()
+            .next()
+            .and_then(|v| serde_json::from_value(v).ok())
+            .ok_or_else(|| surrealdb::Error::thrown("Failed to record state event".to_string()))
     }
 
-    pub async fn add_user_feedback(&self, feedback: UserFeedback) -> Result<UserFeedback, surrealdb::Error> {
-        let created: Option<UserFeedback> = self.db.create("user_feedback").content(feedback).await?;
-        created.ok_or_else(|| surrealdb::Error::Db(surrealdb::error::Db::Internal("Failed to insert user feedback".into())))
+    pub async fn add_user_feedback(
+        &self,
+        feedback: UserFeedback,
+    ) -> Result<UserFeedback, surrealdb::Error> {
+        let val =
+            serde_json::to_value(&feedback).map_err(|e| surrealdb::Error::thrown(e.to_string()))?;
+        let mut response = self
+            .db
+            .query("CREATE user_feedback CONTENT $data")
+            .bind(("data", val))
+            .await?;
+        let raw: Vec<serde_json::Value> = response.take(0).unwrap_or_default();
+        raw.into_iter()
+            .next()
+            .and_then(|v| serde_json::from_value(v).ok())
+            .ok_or_else(|| surrealdb::Error::thrown("Failed to insert user feedback".to_string()))
     }
 
-    pub async fn record_effectiveness(&self, score: EffectivenessScore) -> Result<EffectivenessScore, surrealdb::Error> {
-        let created: Option<EffectivenessScore> = self.db.create("effectiveness_scores").content(score).await?;
-        created.ok_or_else(|| surrealdb::Error::Db(surrealdb::error::Db::Internal("Failed to insert score".into())))
+    pub async fn record_effectiveness(
+        &self,
+        score: EffectivenessScore,
+    ) -> Result<EffectivenessScore, surrealdb::Error> {
+        let val =
+            serde_json::to_value(&score).map_err(|e| surrealdb::Error::thrown(e.to_string()))?;
+        let mut response = self
+            .db
+            .query("CREATE effectiveness_scores CONTENT $data")
+            .bind(("data", val))
+            .await?;
+        let raw: Vec<serde_json::Value> = response.take(0).unwrap_or_default();
+        raw.into_iter()
+            .next()
+            .and_then(|v| serde_json::from_value(v).ok())
+            .ok_or_else(|| surrealdb::Error::thrown("Failed to insert score".to_string()))
     }
 
-    pub async fn get_effectiveness_scores(&self) -> Result<Vec<EffectivenessScore>, surrealdb::Error> {
+    pub async fn get_effectiveness_scores(
+        &self,
+    ) -> Result<Vec<EffectivenessScore>, surrealdb::Error> {
         let mut response = self
             .db
             .query("SELECT * FROM effectiveness_scores ORDER BY created_at DESC")
             .await?;
-        let scores: Vec<EffectivenessScore> = response.take(0)?;
+        let raw: Vec<serde_json::Value> = response.take(0)?;
+        let scores: Vec<EffectivenessScore> = raw
+            .into_iter()
+            .filter_map(|v| serde_json::from_value(v).ok())
+            .collect();
         Ok(scores)
     }
 
-    pub async fn save_tuning_profile(&self, profile: TuningProfileRecord) -> Result<(), surrealdb::Error> {
-        let _: Option<TuningProfileRecord> = self.db.create("tuning_profiles").content(profile).await?;
+    pub async fn save_tuning_profile(
+        &self,
+        profile: TuningProfileRecord,
+    ) -> Result<(), surrealdb::Error> {
+        let val =
+            serde_json::to_value(&profile).map_err(|e| surrealdb::Error::thrown(e.to_string()))?;
+        self.db
+            .query("CREATE tuning_profiles CONTENT $data")
+            .bind(("data", val))
+            .await?;
         Ok(())
     }
 
-    pub async fn get_active_tuning_profile(&self) -> Result<Option<TuningProfileRecord>, surrealdb::Error> {
+    pub async fn get_active_tuning_profile(
+        &self,
+    ) -> Result<Option<TuningProfileRecord>, surrealdb::Error> {
         let mut response = self
             .db
-            .query("SELECT * FROM tuning_profiles WHERE active = true ORDER BY version DESC LIMIT 1")
+            .query(
+                "SELECT * FROM tuning_profiles WHERE active = true ORDER BY version DESC LIMIT 1",
+            )
             .await?;
-        let profile: Option<TuningProfileRecord> = response.take(0)?;
+        let raw: Vec<serde_json::Value> = response.take(0).unwrap_or_default();
+        let profile = raw
+            .into_iter()
+            .next()
+            .and_then(|v| serde_json::from_value(v).ok());
         Ok(profile)
     }
 
-    pub async fn export_all_json(&self) -> Result<String, Box<dyn std::error::Error + Send + Sync>> {
-        let samples: Vec<BiometricSample> = self.db.select("biometric_samples").await?;
-        let sessions: Vec<AudioSession> = self.db.select("audio_sessions").await?;
-        let state_events: Vec<StateEvent> = self.db.select("state_events").await?;
-        let sleep_sessions: Vec<SleepSession> = self.db.select("sleep_sessions").await?;
-        let sleep_stages: Vec<SleepStage> = self.db.select("sleep_stages").await?;
-        let focus_sessions: Vec<FocusSession> = self.db.select("focus_sessions").await?;
-        let feedback: Vec<UserFeedback> = self.db.select("user_feedback").await?;
-        let scores: Vec<EffectivenessScore> = self.db.select("effectiveness_scores").await?;
-        let profiles: Vec<TuningProfileRecord> = self.db.select("tuning_profiles").await?;
+    pub async fn export_all_json(
+        &self,
+    ) -> Result<String, Box<dyn std::error::Error + Send + Sync>> {
+        let mut resp_samples = self.db.query("SELECT * FROM biometric_samples").await?;
+        let raw_samples: Vec<serde_json::Value> = resp_samples.take(0).unwrap_or_default();
+        let samples: Vec<BiometricSample> = raw_samples
+            .into_iter()
+            .filter_map(|v| serde_json::from_value(v).ok())
+            .collect();
+
+        let mut resp_sessions = self.db.query("SELECT * FROM audio_sessions").await?;
+        let raw_sessions: Vec<serde_json::Value> = resp_sessions.take(0).unwrap_or_default();
+        let sessions: Vec<AudioSession> = raw_sessions
+            .into_iter()
+            .filter_map(|v| serde_json::from_value(v).ok())
+            .collect();
+
+        let mut resp_events = self.db.query("SELECT * FROM state_events").await?;
+        let raw_events: Vec<serde_json::Value> = resp_events.take(0).unwrap_or_default();
+        let state_events: Vec<StateEvent> = raw_events
+            .into_iter()
+            .filter_map(|v| serde_json::from_value(v).ok())
+            .collect();
+
+        let mut resp_sleep = self.db.query("SELECT * FROM sleep_sessions").await?;
+        let raw_sleep: Vec<serde_json::Value> = resp_sleep.take(0).unwrap_or_default();
+        let sleep_sessions: Vec<SleepSession> = raw_sleep
+            .into_iter()
+            .filter_map(|v| serde_json::from_value(v).ok())
+            .collect();
+
+        let mut resp_stages = self.db.query("SELECT * FROM sleep_stages").await?;
+        let raw_stages: Vec<serde_json::Value> = resp_stages.take(0).unwrap_or_default();
+        let sleep_stages: Vec<SleepStage> = raw_stages
+            .into_iter()
+            .filter_map(|v| serde_json::from_value(v).ok())
+            .collect();
+
+        let mut resp_focus = self.db.query("SELECT * FROM focus_sessions").await?;
+        let raw_focus: Vec<serde_json::Value> = resp_focus.take(0).unwrap_or_default();
+        let focus_sessions: Vec<FocusSession> = raw_focus
+            .into_iter()
+            .filter_map(|v| serde_json::from_value(v).ok())
+            .collect();
+
+        let mut resp_feedback = self.db.query("SELECT * FROM user_feedback").await?;
+        let raw_feedback: Vec<serde_json::Value> = resp_feedback.take(0).unwrap_or_default();
+        let feedback: Vec<UserFeedback> = raw_feedback
+            .into_iter()
+            .filter_map(|v| serde_json::from_value(v).ok())
+            .collect();
+
+        let mut resp_scores = self.db.query("SELECT * FROM effectiveness_scores").await?;
+        let raw_scores: Vec<serde_json::Value> = resp_scores.take(0).unwrap_or_default();
+        let scores: Vec<EffectivenessScore> = raw_scores
+            .into_iter()
+            .filter_map(|v| serde_json::from_value(v).ok())
+            .collect();
+
+        let mut resp_profiles = self.db.query("SELECT * FROM tuning_profiles").await?;
+        let raw_profiles: Vec<serde_json::Value> = resp_profiles.take(0).unwrap_or_default();
+        let profiles: Vec<TuningProfileRecord> = raw_profiles
+            .into_iter()
+            .filter_map(|v| serde_json::from_value(v).ok())
+            .collect();
 
         let export_doc = serde_json::json!({
             "metadata": {
@@ -249,10 +410,14 @@ impl NeuroStore {
         Ok(serde_json::to_string_pretty(&export_doc)?)
     }
 
-    pub async fn export_full_zip(&self, output_path: &str) -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
+    pub async fn export_full_zip(
+        &self,
+        output_path: &str,
+    ) -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
         let file = std::fs::File::create(output_path)?;
         let mut zip = ZipWriter::new(file);
-        let options = SimpleFileOptions::default().compression_method(zip::CompressionMethod::Deflated);
+        let options =
+            SimpleFileOptions::default().compression_method(zip::CompressionMethod::Deflated);
 
         // 1. Write metadata.json
         zip.start_file("metadata.json", options)?;
@@ -281,30 +446,16 @@ impl NeuroStore {
 
     pub async fn wipe_data(&self, scope: &str) -> Result<(), surrealdb::Error> {
         match scope {
-            "biometric" => {
-                let _: Vec<BiometricSample> = self.db.delete("biometric_samples").await?;
-                let _: Vec<SleepSession> = self.db.delete("sleep_sessions").await?;
-                let _: Vec<SleepStage> = self.db.delete("sleep_stages").await?;
-            }
-            "feedback" => {
-                let _: Vec<UserFeedback> = self.db.delete("user_feedback").await?;
-                let _: Vec<EffectivenessScore> = self.db.delete("effectiveness_scores").await?;
+            "biometrics" => {
+                self.db.query("DELETE biometric_samples; DELETE user_feedback; DELETE effectiveness_scores;").await?;
             }
             "sessions" => {
-                let _: Vec<AudioSession> = self.db.delete("audio_sessions").await?;
-                let _: Vec<StateEvent> = self.db.delete("state_events").await?;
-                let _: Vec<FocusSession> = self.db.delete("focus_sessions").await?;
+                self.db
+                    .query("DELETE audio_sessions; DELETE state_events; DELETE focus_sessions;")
+                    .await?;
             }
             "all" => {
-                let _: Vec<BiometricSample> = self.db.delete("biometric_samples").await?;
-                let _: Vec<AudioSession> = self.db.delete("audio_sessions").await?;
-                let _: Vec<StateEvent> = self.db.delete("state_events").await?;
-                let _: Vec<SleepSession> = self.db.delete("sleep_sessions").await?;
-                let _: Vec<SleepStage> = self.db.delete("sleep_stages").await?;
-                let _: Vec<FocusSession> = self.db.delete("focus_sessions").await?;
-                let _: Vec<UserFeedback> = self.db.delete("user_feedback").await?;
-                let _: Vec<EffectivenessScore> = self.db.delete("effectiveness_scores").await?;
-                let _: Vec<TuningProfileRecord> = self.db.delete("tuning_profiles").await?;
+                self.db.query("DELETE biometric_samples; DELETE audio_sessions; DELETE state_events; DELETE sleep_sessions; DELETE sleep_stages; DELETE focus_sessions; DELETE user_feedback; DELETE effectiveness_scores; DELETE tuning_profiles;").await?;
             }
             _ => {}
         }

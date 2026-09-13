@@ -23,6 +23,12 @@ pub struct StateClassifier {
     pub baseline: PersonalBaseline,
 }
 
+impl Default for StateClassifier {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl StateClassifier {
     pub fn new() -> Self {
         Self {

@@ -69,7 +69,12 @@ pub fn fade_to_preset(
         _ => Modality::Binaural,
     };
 
-    engine.set_preset(preset.carrier, preset.beat, modality, Some(duration_seconds));
+    engine.set_preset(
+        preset.carrier,
+        preset.beat,
+        modality,
+        Some(duration_seconds),
+    );
     Ok(())
 }
 

@@ -12,7 +12,8 @@ pub fn calculate_combined_score(
     if total_weight <= 0.0 {
         return normalize_score(0.5 * (objective_score + subjective_score));
     }
-    let combined = (objective_score * objective_weight + subjective_score * subjective_weight) / total_weight;
+    let combined =
+        (objective_score * objective_weight + subjective_score * subjective_weight) / total_weight;
     normalize_score(combined)
 }
 

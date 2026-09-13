@@ -44,7 +44,7 @@ impl AudioEngine {
 
         let stream = match sample_format {
             SampleFormat::F32 => device.build_output_stream(
-                &stream_config,
+                stream_config,
                 move |data: &mut [f32], _: &cpal::OutputCallbackInfo| {
                     let playing = *playing_clone.lock().unwrap_or_else(|e| e.into_inner());
                     if !playing {
@@ -73,7 +73,7 @@ impl AudioEngine {
                 None,
             ),
             SampleFormat::I16 => device.build_output_stream(
-                &stream_config,
+                stream_config,
                 move |data: &mut [i16], _: &cpal::OutputCallbackInfo| {
                     let playing = *playing_clone.lock().unwrap_or_else(|e| e.into_inner());
                     if !playing {
@@ -119,12 +119,19 @@ impl AudioEngine {
         })
     }
 
-    pub fn set_preset(&self, carrier: f32, beat: f32, modality: Modality, duration_sec: Option<f32>) {
+    pub fn set_preset(
+        &self,
+        carrier: f32,
+        beat: f32,
+        modality: Modality,
+        duration_sec: Option<f32>,
+    ) {
         let a432_carrier = snap_to_a432_ladder(carrier);
         if let Ok(mut osc) = self.state.lock() {
             let sample_rate = osc.sample_rate;
             let ramp_dur = duration_sec.unwrap_or(3.0);
-            osc.carrier_ramp.set_target(a432_carrier, ramp_dur, sample_rate);
+            osc.carrier_ramp
+                .set_target(a432_carrier, ramp_dur, sample_rate);
             osc.beat_ramp.set_target(beat, ramp_dur, sample_rate);
             osc.pulse_freq = beat;
             osc.modality = modality;

@@ -15,7 +15,10 @@ pub async fn get_recent_biometrics(
     store: State<'_, Arc<NeuroStore>>,
     limit: usize,
 ) -> Result<Vec<BiometricSample>, String> {
-    store.get_recent_samples(limit).await.map_err(|e| e.to_string())
+    store
+        .get_recent_samples(limit)
+        .await
+        .map_err(|e| e.to_string())
 }
 
 #[tauri::command]
@@ -23,7 +26,10 @@ pub async fn start_audio_session(
     store: State<'_, Arc<NeuroStore>>,
     session: AudioSession,
 ) -> Result<AudioSession, String> {
-    store.start_audio_session(session).await.map_err(|e| e.to_string())
+    store
+        .start_audio_session(session)
+        .await
+        .map_err(|e| e.to_string())
 }
 
 #[tauri::command]
@@ -44,13 +50,13 @@ pub async fn submit_user_feedback(
     store: State<'_, Arc<NeuroStore>>,
     feedback: UserFeedback,
 ) -> Result<UserFeedback, String> {
-    store.add_user_feedback(feedback).await.map_err(|e| e.to_string())
+    store
+        .add_user_feedback(feedback)
+        .await
+        .map_err(|e| e.to_string())
 }
 
 #[tauri::command]
-pub async fn wipe_data(
-    store: State<'_, Arc<NeuroStore>>,
-    scope: String,
-) -> Result<(), String> {
+pub async fn wipe_data(store: State<'_, Arc<NeuroStore>>, scope: String) -> Result<(), String> {
     store.wipe_data(&scope).await.map_err(|e| e.to_string())
 }
