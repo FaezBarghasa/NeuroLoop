@@ -110,7 +110,7 @@ All detailed specifications and technical docs are available in [`docs/`](docs/)
   sudo apt install libwebkit2gtk-4.1-dev build-essential curl wget file libxdo-dev libssl-dev libayatana-appindicator3-dev librsvg2-dev libasound2-dev
   ```
 
-### Quick Start
+### Desktop Quick Start
 
 ```bash
 # 1. Install frontend dependencies
@@ -125,6 +125,39 @@ pnpm exec tsc --noEmit
 # 4. Run Rust unit tests
 cd src-tauri
 cargo test -- --nocapture
+```
+
+### 📱 Android Build & Signed APK Packaging
+
+NeuroLoop is fully optimized for Android mobile devices (featuring hardware safe-insets, 48px ergonomic touch targets, and mobile bottom navigation).
+
+#### 1. Setup Build Environment Variables
+
+```bash
+export ANDROID_HOME=$HOME/Android/Sdk
+export NDK_HOME=$ANDROID_HOME/ndk/30.0.16248370
+# Ensure Java 21 JDK with javac is active
+export JAVA_HOME=/path/to/jdk-21
+export PATH=$JAVA_HOME/bin:$PATH
+```
+
+#### 2. Build Signed Universal Release APK
+
+```bash
+pnpm exec tauri android build --apk --target aarch64
+```
+
+Output APK will be generated at:
+`src-tauri/gen/android/app/build/outputs/apk/universal/release/app-universal-release.apk`
+
+#### 3. Verify Signature & Install to Device
+
+```bash
+# Verify v2 APK signature
+$ANDROID_HOME/build-tools/36.0.0/apksigner verify --verbose src-tauri/gen/android/app/build/outputs/apk/universal/release/app-universal-release.apk
+
+# Sideload to connected Android device / wearable
+adb install src-tauri/gen/android/app/build/outputs/apk/universal/release/app-universal-release.apk
 ```
 
 ### Data Management Scripts

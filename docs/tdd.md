@@ -36,16 +36,37 @@ Every algorithmic, statistical, and audio DSP calculation in NeuroLoop must be s
 
 ---
 
+### 2.5 CMF Watch BLE Protocol & Decryption
+- **File**: `src-tauri/src/biometric/cmf_protocol.rs`
+- **Tests**:
+  - `test_cmf_packet_header_validation`: Verify magic byte `0xAB` and payload length parsing.
+  - `test_aes_128_payload_decryption`: Ensure sample encrypted telemetry frame decrypts cleanly to raw heart rate and timestamp struct.
+
+### 2.6 Autonomic State Machine & Hysteresis
+- **File**: `src-tauri/src/biometric/state_machine.rs`
+- **Tests**:
+  - `test_deadband_filtering_prevents_chatter`: Verify rapid $\pm 1$ BPM jitter does not trigger back-to-back state transitions.
+  - `test_sleep_onset_classification`: Validate transition to Sleep Onset when $\Delta\text{HR} < -8$ BPM and movement $< 5$.
+
+---
+
 ## 3. Automated Test Execution Commands
 
 ```bash
-# Run all Rust unit and integration tests
+# Run all Rust unit and integration tests (all 15 tests)
 cd src-tauri
 cargo test -- --nocapture
 
 # Run specific A432 tuning test suite
 cargo test tuning::a432
 
-# Frontend type checking and test suites
+# Run CMF protocol and biometric test suites
+cargo test biometric::
+
+# Frontend type checking and build
+pnpm exec tsc --noEmit
 pnpm build
+
+# Android APK Signature Scheme v2 validation
+$ANDROID_HOME/build-tools/36.0.0/apksigner verify --verbose src-tauri/gen/android/app/build/outputs/apk/universal/release/app-universal-release.apk
 ```
