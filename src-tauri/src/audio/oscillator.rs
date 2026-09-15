@@ -48,7 +48,7 @@ impl OscillatorState {
             return (0.0, 0.0);
         }
 
-        match self.modality {
+        let (raw_l, raw_r) = match self.modality {
             Modality::Binaural => {
                 let freq_l = carrier - (beat / 2.0);
                 let freq_r = carrier + (beat / 2.0);
@@ -98,6 +98,59 @@ impl OscillatorState {
 
                 (sample_l, sample_r)
             }
+        };
+
+        // Apply soft-limiting tanh saturation curve to guarantee audio safety [-1.0, 1.0]
+        (Self::soft_limit(raw_l), Self::soft_limit(raw_r))
+    }
+
+    #[inline(always)]
+    pub fn soft_limit(sample: f32) -> f32 {
+        if sample.abs() <= 0.8 {
+            sample
+        } else {
+            sample.tanh()
         }
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_phase_continuity_and_clipping_bounds() {
+        let mut osc = OscillatorState::new(44100.0, 216.0, 10.0, Modality::Binaural);
+        osc.volume_ramp.set_target(1.0, 0.0, 44100.0);
+
+        for _ in 0..4410 {
+            let (l, r) = osc.next_sample();
+            assert!(l >= -1.0 && l <= 1.0, "Left sample out of bounds: {}", l);
+            assert!(r >= -1.0 && r <= 1.0, "Right sample out of bounds: {}", r);
+            assert!(osc.phase_l >= 0.0 && osc.phase_l < 1.0);
+            assert!(osc.phase_r >= 0.0 && osc.phase_r < 1.0);
+        }
+    }
+
+    #[test]
+    fn test_modalities_render_finite_samples() {
+        for modality in [
+            Modality::Binaural,
+            Modality::Isochronic,
+            Modality::Monaural,
+            Modality::Mixed,
+        ] {
+            let mut osc = OscillatorState::new(48000.0, 108.0, 2.5, modality);
+            let (l, r) = osc.next_sample();
+            assert!(l.is_finite());
+            assert!(r.is_finite());
+        }
+    }
+
+    #[test]
+    fn test_soft_limit_ceiling() {
+        assert_eq!(OscillatorState::soft_limit(0.5), 0.5);
+        let saturated = OscillatorState::soft_limit(2.5);
+        assert!(saturated < 1.0 && saturated > 0.8);
     }
 }
