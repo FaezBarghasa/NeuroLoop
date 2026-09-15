@@ -12,6 +12,21 @@
   --app-border: rgba(255, 255, 255, 0.25);
 }
 
+/* Mobile Safe Area and Touch Ergonomics */
+.pb-safe {
+  padding-bottom: max(env(safe-area-inset-bottom, 0px), 16px);
+}
+
+.pt-safe {
+  padding-top: max(env(safe-area-inset-top, 0px), 12px);
+}
+
+@layer utilities {
+  .touch-pan-y {
+    touch-action: pan-y;
+  }
+}
+
 /* Custom smooth scrollbar */
 ::-webkit-scrollbar {
   width: 6px;

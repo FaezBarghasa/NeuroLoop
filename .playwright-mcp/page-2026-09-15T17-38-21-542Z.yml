@@ -1,0 +1,136 @@
+- generic [ref=f2e4]:
+  - banner [ref=f2e5]:
+    - generic [ref=f2e6]:
+      - generic [ref=f2e7]:
+        - generic [ref=f2e8] [cursor=pointer]: NeuroLoop
+        - generic [ref=f2e20]:
+          - button "68 BPM" [ref=f2e21] [cursor=pointer]
+          - button "View Insights" [ref=f2e31] [cursor=pointer]:
+            - generic [ref=f2e33]: Insights
+          - button "Toggle Theme" [ref=f2e34] [cursor=pointer]
+          - button "Start Beats" [ref=f2e37] [cursor=pointer]
+      - generic [ref=f2e41]:
+        - button "Home" [ref=f2e42] [cursor=pointer]
+        - button "Music" [ref=f2e45] [cursor=pointer]
+        - button "Presets" [ref=f2e51] [cursor=pointer]
+        - button "Bio-Sync" [ref=f2e61] [cursor=pointer]
+        - button "Sleep" [ref=f2e65] [cursor=pointer]
+        - button "Devices" [ref=f2e69] [cursor=pointer]
+        - button "Export" [ref=f2e76] [cursor=pointer]
+  - main [ref=f2e79]:
+    - generic [ref=f2e80]:
+      - generic [ref=f2e81]:
+        - generic [ref=f2e82]:
+          - generic [ref=f2e88]:
+            - heading "Focus Timer" [level=3] [ref=f2e89]
+            - paragraph [ref=f2e90]: Deep work sprint with optimized audio.
+          - generic "Toggle notification muting" [ref=f2e91] [cursor=pointer]: Muted
+        - generic [ref=f2e98]:
+          - generic [ref=f2e99]:
+            - generic [ref=f2e100]: "Select duration:"
+            - generic [ref=f2e101]:
+              - button "15m Sprint" [ref=f2e102] [cursor=pointer]
+              - button "25m Pomodoro" [ref=f2e103] [cursor=pointer]
+              - button "45m Deep Work" [ref=f2e104] [cursor=pointer]
+              - button "60m Flow" [ref=f2e105] [cursor=pointer]
+              - button "90m Ultradian" [ref=f2e106] [cursor=pointer]
+          - generic [ref=f2e107]:
+            - generic [ref=f2e108]:
+              - generic [ref=f2e109]: "Focus Soundscape:"
+              - generic [ref=f2e110]:
+                - button "Deep Work Beta" [ref=f2e111] [cursor=pointer]
+                - button "Coding SMR" [ref=f2e112] [cursor=pointer]
+                - button "Reading Alpha-Beta" [ref=f2e113] [cursor=pointer]
+                - button "Study Beta" [ref=f2e114] [cursor=pointer]
+                - button "Memory Gamma" [ref=f2e115] [cursor=pointer]
+            - button "Start Timer" [ref=f2e116] [cursor=pointer]
+      - generic [ref=f2e119]:
+        - generic [ref=f2e120]:
+          - generic [ref=f2e121]:
+            - generic [ref=f2e123]: Alpha Entrainment
+            - generic [ref=f2e124]: • Calm Alertness & Stress De-escalation
+          - generic [ref=f2e125]:
+            - generic [ref=f2e126]: "Left: 200 Hz"
+            - generic [ref=f2e127]: "|"
+            - generic [ref=f2e128]: "Right: 210.0 Hz"
+        - generic [ref=f2e129]:
+          - generic:
+            - generic:
+              - generic:
+                - generic: "10.0"
+                - generic: Hz
+              - paragraph: Calm Alertness & Stress De-escalation
+          - button "Tap to Begin Soundscape" [ref=f2e132] [cursor=pointer]
+      - generic [ref=f2e136]:
+        - generic [ref=f2e138]:
+          - button "Delta 0.5-4 Hz" [ref=f2e139] [cursor=pointer]:
+            - generic [ref=f2e140]: Delta
+            - generic [ref=f2e141]: 0.5-4 Hz
+          - button "Theta 4-8 Hz" [ref=f2e142] [cursor=pointer]:
+            - generic [ref=f2e143]: Theta
+            - generic [ref=f2e144]: 4-8 Hz
+          - button "Alpha 8-13 Hz" [ref=f2e145] [cursor=pointer]:
+            - generic [ref=f2e146]: Alpha
+            - generic [ref=f2e147]: 8-13 Hz
+          - button "Beta 13-30 Hz" [ref=f2e148] [cursor=pointer]:
+            - generic [ref=f2e149]: Beta
+            - generic [ref=f2e150]: 13-30 Hz
+          - button "Gamma 30-50 Hz" [ref=f2e151] [cursor=pointer]:
+            - generic [ref=f2e152]: Gamma
+            - generic [ref=f2e153]: 30-50 Hz
+        - generic [ref=f2e154]:
+          - generic [ref=f2e155]:
+            - generic [ref=f2e156]:
+              - generic [ref=f2e157]: Brainwave Target
+              - generic [ref=f2e160]:
+                - button "-" [ref=f2e161] [cursor=pointer]
+                - generic [ref=f2e162]: 10.0 Hz
+                - button "+" [ref=f2e163] [cursor=pointer]
+            - generic [ref=f2e164]:
+              - slider [ref=f2e165] [cursor=pointer]: "10"
+              - generic [ref=f2e166]:
+                - generic [ref=f2e167]: 0.5 Hz Sleep
+                - generic [ref=f2e168]: 10 Hz Alpha Calm
+                - generic [ref=f2e169]: 45 Hz Focus
+            - generic [ref=f2e170]:
+              - generic [ref=f2e171]:
+                - generic [ref=f2e172]:
+                  - generic [ref=f2e173]: Continuous Tones
+                  - generic [ref=f2e174]: 85%
+                - slider [ref=f2e175] [cursor=pointer]: "0.85"
+              - generic [ref=f2e176]:
+                - generic [ref=f2e177]:
+                  - generic [ref=f2e178]: Rhythmic Pulses
+                  - generic [ref=f2e179]: 25%
+                - slider [ref=f2e180] [cursor=pointer]: "0.25"
+          - generic [ref=f2e181]:
+            - generic [ref=f2e182]:
+              - generic [ref=f2e183]: Ambient Soundscape Mask
+              - generic [ref=f2e189]: 20%
+            - generic [ref=f2e190]:
+              - button "Off Pure harmonic tones" [ref=f2e191] [cursor=pointer]:
+                - generic [ref=f2e192]: "Off"
+                - generic [ref=f2e193]: Pure harmonic tones
+              - button "Waterfall Natural 1/f soothing frequency" [ref=f2e194] [cursor=pointer]:
+                - generic [ref=f2e195]: Waterfall
+                - generic [ref=f2e196]: Natural 1/f soothing frequency
+              - button "Deep Rumble Warm 1/f² grounding mask" [ref=f2e197] [cursor=pointer]:
+                - generic [ref=f2e198]: Deep Rumble
+                - generic [ref=f2e199]: Warm 1/f² grounding mask
+              - button "Air Mask Spectral focus blanket" [ref=f2e200] [cursor=pointer]:
+                - generic [ref=f2e201]: Air Mask
+                - generic [ref=f2e202]: Spectral focus blanket
+            - generic [ref=f2e203]:
+              - generic [ref=f2e204]:
+                - generic [ref=f2e205]: Ambient Volume
+                - generic [ref=f2e206]: 20%
+              - slider [ref=f2e207] [cursor=pointer]: "0.21"
+            - generic [ref=f2e208]: Stereo headphones recommended for true spatial immersion.
+        - button "Advanced Audio Settings" [ref=f2e213] [cursor=pointer]
+  - contentinfo [ref=f2e222]:
+    - generic [ref=f2e223]:
+      - generic [ref=f2e224]: NeuroLoop • Adaptive Soundscapes
+      - generic [ref=f2e227]:
+        - generic [ref=f2e228]: Personalized Wellness
+        - generic [ref=f2e229]: •
+        - generic [ref=f2e230]: Data Privacy Focused

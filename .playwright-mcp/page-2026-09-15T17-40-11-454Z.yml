@@ -1,0 +1,102 @@
+- generic [ref=f2e1]:
+  - generic [ref=f2e4]:
+    - banner [ref=f2e5]:
+      - generic [ref=f2e6]:
+        - generic [ref=f2e7]:
+          - generic [ref=f2e8] [cursor=pointer]: NeuroLoop
+          - generic [ref=f2e20]:
+            - button "64 BPM" [ref=f2e231] [cursor=pointer]
+            - button "View Insights" [ref=f2e31] [cursor=pointer]:
+              - generic [ref=f2e33]: Insights
+            - button "Toggle Theme" [ref=f2e34] [cursor=pointer]
+            - button "Start Beats" [ref=f2e37] [cursor=pointer]
+        - generic [ref=f2e41]:
+          - button "Home" [ref=f2e42] [cursor=pointer]
+          - button "Music" [ref=f2e45] [cursor=pointer]
+          - button "Presets" [ref=f2e51] [cursor=pointer]
+          - button "Bio-Sync" [active] [ref=f2e61] [cursor=pointer]
+          - button "Sleep" [ref=f2e65] [cursor=pointer]
+          - button "Devices" [ref=f2e69] [cursor=pointer]
+          - button "Export" [ref=f2e76] [cursor=pointer]
+    - main [ref=f2e79]:
+      - generic [ref=f2e1397]:
+        - generic [ref=f2e1399]:
+          - generic [ref=f2e1404]:
+            - generic [ref=f2e1405]:
+              - heading "Smart Sync Mode" [level=3] [ref=f2e1406]
+              - generic [ref=f2e1407]: Active
+            - paragraph [ref=f2e1408]: Automatically adjusts audio frequencies to help you relax if your heart rate spikes.
+          - button "Turn Off Smart Sync" [ref=f2e1409] [cursor=pointer]
+        - generic [ref=f2e1410]:
+          - generic [ref=f2e1411]:
+            - generic [ref=f2e1412]: Heart Rate
+            - generic [ref=f2e1416]:
+              - generic [ref=f2e1417]: "70"
+              - generic [ref=f2e1418]: BPM
+          - generic [ref=f2e1419]:
+            - generic [ref=f2e1420]: Heart Rate Variability
+            - generic [ref=f2e1424]:
+              - generic [ref=f2e1425]: "55"
+              - generic [ref=f2e1426]: ms
+          - generic [ref=f2e1427]:
+            - generic [ref=f2e1428]: Stress Score
+            - generic [ref=f2e1433]:
+              - generic [ref=f2e1434]: "19"
+              - generic [ref=f2e1435]: /100
+        - generic [ref=f2e1436]:
+          - generic [ref=f2e1437]:
+            - generic [ref=f2e1438]:
+              - heading "Heart Rate Graph" [level=4] [ref=f2e1439]
+              - paragraph [ref=f2e1440]: Last 60 seconds of activity.
+            - generic [ref=f2e1441]: Live Streaming
+          - application [ref=f2e1445]:
+            - generic [ref=f2e1455]:
+              - generic [ref=f2e1456]:
+                - generic [ref=f2e1457]: 09:09:07 PM
+                - generic [ref=f2e1459]: 09:09:14 PM
+                - generic [ref=f2e1461]: 09:09:21 PM
+                - generic [ref=f2e1463]: 09:09:28 PM
+                - generic [ref=f2e1465]: 09:09:35 PM
+                - generic [ref=f2e1467]: 09:09:42 PM
+                - generic [ref=f2e1469]: 09:09:49 PM
+                - generic [ref=f2e1471]: 09:09:56 PM
+                - generic [ref=f2e1473]: 09:10:03 PM
+                - generic [ref=f2e1475]: 09:10:10 PM
+              - generic [ref=f2e1477]:
+                - generic [ref=f2e1478]: 50 bpm
+                - generic [ref=f2e1480]: 65 bpm
+                - generic [ref=f2e1482]: 80 bpm
+                - generic [ref=f2e1484]: 95 bpm
+                - generic [ref=f2e1486]: 110bpm
+        - generic [ref=f2e1488]:
+          - generic [ref=f2e1489]:
+            - generic [ref=f2e1490]: Test Simulator
+            - generic [ref=f2e1493]:
+              - generic [ref=f2e1494]:
+                - generic [ref=f2e1495]: Simulated Heart Rate
+                - generic [ref=f2e1496]: 64 BPM
+              - slider [ref=f2e1497] [cursor=pointer]: "64"
+            - generic [ref=f2e1498]:
+              - generic [ref=f2e1499]:
+                - generic [ref=f2e1500]: Hysteresis Deadband
+                - generic [ref=f2e1501]: ±3 BPM
+              - slider [ref=f2e1502] [cursor=pointer]: "3"
+            - generic [ref=f2e1503]:
+              - button "Deep Rest" [ref=f2e1504] [cursor=pointer]
+              - button "Baseline" [ref=f2e1505] [cursor=pointer]
+              - button "Stress Spike" [ref=f2e1506] [cursor=pointer]
+          - generic [ref=f2e1507]:
+            - generic [ref=f2e1508]: Activity Log
+            - generic [ref=f2e1514]:
+              - generic [ref=f2e1515]:
+                - generic [ref=f2e1516]: Closed Loop Initialized
+                - generic [ref=f2e1517]: 9:08:21 PM
+              - paragraph [ref=f2e1518]: Dynamic bio-adaptive baseline established (HR 64, RMSSD 55ms)
+    - contentinfo [ref=f2e222]:
+      - generic [ref=f2e223]:
+        - generic [ref=f2e224]: NeuroLoop • Adaptive Soundscapes
+        - generic [ref=f2e227]:
+          - generic [ref=f2e228]: Personalized Wellness
+          - generic [ref=f2e229]: •
+          - generic [ref=f2e230]: Data Privacy Focused
+  - generic [aria-hidden] [ref=f2e1519]: "50"

@@ -1,0 +1,125 @@
+- generic [ref=f6e4]:
+  - banner [ref=f6e5]:
+    - generic [ref=f6e7]:
+      - generic [ref=f6e8] [cursor=pointer]: NeuroLoop
+      - generic [ref=f6e20]:
+        - button "68 BPM" [ref=f6e21] [cursor=pointer]
+        - button "View Insights" [ref=f6e31] [cursor=pointer]
+        - button "Toggle Theme" [ref=f6e33] [cursor=pointer]
+  - main [ref=f6e36]:
+    - generic [ref=f6e37]:
+      - generic [ref=f6e38]:
+        - generic [ref=f6e39]:
+          - generic [ref=f6e45]:
+            - heading "Focus Timer" [level=3] [ref=f6e46]
+            - paragraph [ref=f6e47]: Deep work sprint with optimized audio.
+          - generic "Toggle notification muting" [ref=f6e48] [cursor=pointer]: Muted
+        - generic [ref=f6e55]:
+          - generic [ref=f6e56]:
+            - generic [ref=f6e57]: "Select duration:"
+            - generic [ref=f6e58]:
+              - button "15m Sprint" [ref=f6e59] [cursor=pointer]
+              - button "25m Pomodoro" [ref=f6e60] [cursor=pointer]
+              - button "45m Deep Work" [ref=f6e61] [cursor=pointer]
+              - button "60m Flow" [ref=f6e62] [cursor=pointer]
+              - button "90m Ultradian" [ref=f6e63] [cursor=pointer]
+          - generic [ref=f6e64]:
+            - generic [ref=f6e65]:
+              - generic [ref=f6e66]: "Focus Soundscape:"
+              - generic [ref=f6e67]:
+                - button "Deep Work Beta" [ref=f6e68] [cursor=pointer]
+                - button "Coding SMR" [ref=f6e69] [cursor=pointer]
+                - button "Reading Alpha-Beta" [ref=f6e70] [cursor=pointer]
+                - button "Study Beta" [ref=f6e71] [cursor=pointer]
+                - button "Memory Gamma" [ref=f6e72] [cursor=pointer]
+            - button "Start Timer" [ref=f6e73] [cursor=pointer]
+      - generic [ref=f6e76]:
+        - generic [ref=f6e77]:
+          - generic [ref=f6e78]: Alpha Entrainment
+          - generic [ref=f6e81]:
+            - generic [ref=f6e82]: "Left: 200 Hz"
+            - generic [ref=f6e83]: "|"
+            - generic [ref=f6e84]: "Right: 210.0 Hz"
+        - generic [ref=f6e85]:
+          - generic:
+            - generic:
+              - generic:
+                - generic: "10.0"
+                - generic: Hz
+              - paragraph: Calm Alertness & Stress De-escalation
+          - button "Tap to Begin Soundscape" [ref=f6e88] [cursor=pointer]
+      - generic [ref=f6e92]:
+        - generic [ref=f6e94]:
+          - button "Delta" [ref=f6e95] [cursor=pointer]
+          - button "Theta" [ref=f6e97] [cursor=pointer]
+          - button "Alpha" [ref=f6e99] [cursor=pointer]
+          - button "Beta" [ref=f6e101] [cursor=pointer]
+          - button "Gamma" [ref=f6e103] [cursor=pointer]
+        - generic [ref=f6e105]:
+          - generic [ref=f6e106]:
+            - generic [ref=f6e107]:
+              - generic [ref=f6e108]: Brainwave Target
+              - generic [ref=f6e111]:
+                - button "-" [ref=f6e112] [cursor=pointer]
+                - generic [ref=f6e113]: 10.0 Hz
+                - button "+" [ref=f6e114] [cursor=pointer]
+            - generic [ref=f6e115]:
+              - slider [ref=f6e116] [cursor=pointer]: "10"
+              - generic [ref=f6e117]:
+                - generic [ref=f6e118]: 0.5 Hz Sleep
+                - generic [ref=f6e119]: 10 Hz Alpha Calm
+                - generic [ref=f6e120]: 45 Hz Focus
+            - generic [ref=f6e121]:
+              - generic [ref=f6e122]:
+                - generic [ref=f6e123]:
+                  - generic [ref=f6e124]: Continuous Tones
+                  - generic [ref=f6e125]: 85%
+                - slider [ref=f6e126] [cursor=pointer]: "0.85"
+              - generic [ref=f6e127]:
+                - generic [ref=f6e128]:
+                  - generic [ref=f6e129]: Rhythmic Pulses
+                  - generic [ref=f6e130]: 25%
+                - slider [ref=f6e131] [cursor=pointer]: "0.25"
+          - generic [ref=f6e132]:
+            - generic [ref=f6e133]:
+              - generic [ref=f6e134]: Ambient Soundscape Mask
+              - generic [ref=f6e140]: 20%
+            - generic [ref=f6e141]:
+              - button "Off Pure harmonic tones" [ref=f6e142] [cursor=pointer]:
+                - generic [ref=f6e143]: "Off"
+                - generic [ref=f6e144]: Pure harmonic tones
+              - button "Waterfall Natural 1/f soothing frequency" [ref=f6e145] [cursor=pointer]:
+                - generic [ref=f6e146]: Waterfall
+                - generic [ref=f6e147]: Natural 1/f soothing frequency
+              - button "Deep Rumble Warm 1/f² grounding mask" [ref=f6e148] [cursor=pointer]:
+                - generic [ref=f6e149]: Deep Rumble
+                - generic [ref=f6e150]: Warm 1/f² grounding mask
+              - button "Air Mask Spectral focus blanket" [ref=f6e151] [cursor=pointer]:
+                - generic [ref=f6e152]: Air Mask
+                - generic [ref=f6e153]: Spectral focus blanket
+            - generic [ref=f6e154]:
+              - generic [ref=f6e155]:
+                - generic [ref=f6e156]: Ambient Volume
+                - generic [ref=f6e157]: 20%
+              - slider [ref=f6e158] [cursor=pointer]: "0.21"
+            - generic [ref=f6e159]: Stereo headphones recommended for true spatial immersion.
+        - button "Advanced Audio Settings" [ref=f6e164] [cursor=pointer]
+  - generic [ref=f6e174]:
+    - button "Start Audio" [ref=f6e175] [cursor=pointer]
+    - generic [ref=f6e178]:
+      - generic [ref=f6e179]:
+        - generic [ref=f6e180]:
+          - generic [ref=f6e181]: 10.0 Hz
+          - generic [ref=f6e182]: (200 Hz)
+        - generic [ref=f6e183]: Beats Off
+      - generic [ref=f6e184]:
+        - button "-0.5" [ref=f6e185] [cursor=pointer]
+        - button "+0.5" [ref=f6e186] [cursor=pointer]
+        - slider [ref=f6e192] [cursor=pointer]: "0.75"
+  - generic [ref=f6e194]:
+    - button "Home" [ref=f6e195] [cursor=pointer]
+    - button "Music" [ref=f6e199] [cursor=pointer]
+    - button "Presets" [ref=f6e206] [cursor=pointer]
+    - button "Bio-Sync" [ref=f6e217] [cursor=pointer]
+    - button "Sleep" [ref=f6e222] [cursor=pointer]
+    - button "Devices" [ref=f6e227] [cursor=pointer]

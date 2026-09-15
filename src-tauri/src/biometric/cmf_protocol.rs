@@ -137,7 +137,7 @@ impl CmfProtocolDecoder {
         iv: &[u8; 16],
     ) -> Result<Vec<u8>, &'static str> {
         use aes::Aes128;
-        use cbc::cipher::{BlockDecryptMut, KeyIvInit};
+        use cipher::{BlockModeDecrypt, KeyIvInit};
 
         if encrypted_data.is_empty() || !encrypted_data.len().is_multiple_of(16) {
             return Err("Encrypted data must be a non-empty multiple of 16 bytes");
@@ -148,7 +148,7 @@ impl CmfProtocolDecoder {
 
         let mut buf = encrypted_data.to_vec();
         decryptor
-            .decrypt_padded_mut::<cipher::block_padding::Pkcs7>(&mut buf)
+            .decrypt_padded::<cipher::block_padding::Pkcs7>(&mut buf)
             .map(|plaintext| plaintext.to_vec())
             .map_err(|_| "AES-128-CBC PKCS7 unpadding error")
     }

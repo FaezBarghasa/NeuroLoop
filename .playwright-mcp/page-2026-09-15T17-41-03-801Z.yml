@@ -1,0 +1,87 @@
+- generic [ref=f2e1]:
+  - generic [ref=f2e4]:
+    - banner [ref=f2e5]:
+      - generic [ref=f2e7]:
+        - generic [ref=f2e8] [cursor=pointer]: NeuroLoop
+        - generic [ref=f2e20]:
+          - button "68 BPM" [ref=f2e1520] [cursor=pointer]
+          - button "View Insights" [ref=f2e31] [cursor=pointer]
+          - button "Toggle Theme" [ref=f2e34] [cursor=pointer]
+    - main [ref=f2e79]:
+      - generic [ref=f2e1521]:
+        - generic [ref=f2e1522]:
+          - generic [ref=f2e1530]:
+            - heading "Connect Devices" [level=2] [ref=f2e1531]
+            - paragraph [ref=f2e1532]: Sync your heart rate and sleep data to personalize your audio sessions.
+          - generic [ref=f2e1533]:
+            - generic [ref=f2e1535]: "Source:"
+            - generic [ref=f2e1536]: google_health_connect
+        - generic [ref=f2e1537]:
+          - generic [ref=f2e1538] [cursor=pointer]:
+            - generic [ref=f2e1539]: Jetpack API
+            - heading "Google Health Connect" [level=4] [ref=f2e1544]
+            - paragraph [ref=f2e1545]: Android OS health database (Samsung, Xiaomi, Amazfit, Pixel Watch, Oura, Garmin).
+          - generic [ref=f2e1546] [cursor=pointer]:
+            - generic [ref=f2e1547]: FOSS Intent API
+            - heading "Gadgetbridge API" [level=4] [ref=f2e1556]
+            - paragraph [ref=f2e1557]: "Local Android broadcasts (`ACTION_HEART_RATE_NOTIFICATION`), DB export & Zero-Cloud sync."
+          - generic [ref=f2e1558] [cursor=pointer]:
+            - generic [ref=f2e1559]: OAuth 2.0
+            - heading "Google Fit API" [level=4] [ref=f2e1564]
+            - paragraph [ref=f2e1565]: "REST endpoint integration (`fitness/v1/users/me/dataset:aggregate`)."
+          - generic [ref=f2e1566] [cursor=pointer]:
+            - generic [ref=f2e1567]: Direct GATT
+            - heading "Direct BLE & CMF" [level=4] [ref=f2e1572]
+            - paragraph [ref=f2e1573]: Standard Web Bluetooth HRP (0x180D) and CMF Watch Pro 2 (0xfff0).
+        - generic [ref=f2e1574]:
+          - button "Google Health Connect & Fit API" [ref=f2e1575] [cursor=pointer]
+          - button "Gadgetbridge Intent API" [ref=f2e1576] [cursor=pointer]
+          - button "Direct Bluetooth & Packet Log" [ref=f2e1577] [cursor=pointer]
+        - generic [ref=f2e1579]:
+          - generic [ref=f2e1580]:
+            - generic [ref=f2e1581]:
+              - heading "Android Health Connect Client" [level=3] [ref=f2e1585]
+              - generic [ref=f2e1586]: androidx.health.connect
+            - paragraph [ref=f2e1587]: Connects directly to Android's unified on-device health storage. Any wearable synchronizing with Health Connect shares continuous Heart Rate (BPM), HRV (RMSSD), and Sleep Sessions with zero battery penalty.
+            - generic [ref=f2e1588]:
+              - generic [ref=f2e1589]: "Active Android Health Permissions:"
+              - generic [ref=f2e1590]: android.permission.health.READ_HEART_RATE
+              - generic [ref=f2e1595]: android.permission.health.READ_HEART_RATE_VARIABILITY
+              - generic [ref=f2e1600]: android.permission.health.READ_SLEEP
+              - generic [ref=f2e1605]: android.permission.health.READ_OXYGEN_SATURATION
+            - generic [ref=f2e1610]:
+              - button "Sync Health Connect" [ref=f2e1611] [cursor=pointer]
+              - button "Open Android Settings" [ref=f2e1618] [cursor=pointer]
+          - generic [ref=f2e1624]:
+            - generic [ref=f2e1625]:
+              - heading "Google Fit REST API & OAuth" [level=3] [ref=f2e1629]
+              - generic [ref=f2e1630]: Google Fitness API v1
+            - paragraph [ref=f2e1631]: Connect your Google Account to pull aggregate dataset telemetry across devices via the official Google Fit REST API endpoints.
+            - generic [ref=f2e1632]:
+              - text: "OAuth 2.0 Access Token (Optional / Live Test):"
+              - textbox "Bearer ya29.a0AfH6SM..." [ref=f2e1633]
+            - generic [ref=f2e1634]:
+              - generic [ref=f2e1635]: "Endpoint:"
+              - generic [ref=f2e1636]: POST https://www.googleapis.com/fitness/v1/users/me/dataset:aggregate
+              - generic [ref=f2e1637]: "Data: derived:com.google.heart_rate.bpm, sleep.segment"
+            - button "Fetch Google Fit Telemetry" [ref=f2e1638] [cursor=pointer]
+    - generic [ref=f2e1643]:
+      - button "Start Audio" [ref=f2e1644] [cursor=pointer]
+      - generic [ref=f2e1647]:
+        - generic [ref=f2e1648]:
+          - generic [ref=f2e1649]:
+            - generic [ref=f2e1650]: 10.0 Hz
+            - generic [ref=f2e1651]: (200 Hz)
+          - generic [ref=f2e1652]: Beats Off
+        - generic [ref=f2e1653]:
+          - button "-0.5" [ref=f2e1654] [cursor=pointer]
+          - button "+0.5" [ref=f2e1655] [cursor=pointer]
+          - slider [ref=f2e1661] [cursor=pointer]: "0.75"
+    - generic [ref=f2e1663]:
+      - button "Home" [ref=f2e1664] [cursor=pointer]
+      - button "Music" [ref=f2e1668] [cursor=pointer]
+      - button "Presets" [ref=f2e1675] [cursor=pointer]
+      - button "Bio-Sync" [ref=f2e1686] [cursor=pointer]
+      - button "Sleep" [ref=f2e1691] [cursor=pointer]
+      - button "Devices" [active] [ref=f2e1696] [cursor=pointer]
+  - generic [aria-hidden] [ref=f2e1519]: 09:11:02
