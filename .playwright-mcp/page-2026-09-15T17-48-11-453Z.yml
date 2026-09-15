@@ -1,0 +1,916 @@
+- generic [ref=f6e4]:
+  - banner [ref=f6e5]:
+    - generic [ref=f6e7]:
+      - generic [ref=f6e8] [cursor=pointer]: NeuroLoop
+      - generic [ref=f6e20]:
+        - button "76 BPM" [ref=f6e445] [cursor=pointer]
+        - button "View Insights" [ref=f6e31] [cursor=pointer]
+        - button "Toggle Theme" [ref=f6e33] [cursor=pointer]
+  - generic [ref=f6e238]:
+    - generic [ref=f6e243]:
+      - generic [ref=f6e244]:
+        - generic [ref=f6e245]: Elevated Stress Detected
+        - generic [ref=f6e248]: 09:17:07 PM
+      - paragraph [ref=f6e249]: We noticed your metrics are elevated. Would you like to switch to a calming audio session?
+    - generic [ref=f6e250]:
+      - button "Play Calming Audio" [ref=f6e251] [cursor=pointer]
+      - button "Dismiss Alert" [ref=f6e254] [cursor=pointer]
+  - main [ref=f6e36]:
+    - generic [ref=f6e446]:
+      - generic [ref=f6e447]:
+        - generic [ref=f6e459]:
+          - heading "Soundscape Presets" [level=2] [ref=f6e460]
+          - paragraph [ref=f6e461]: Scientifically tuned audio to help you focus, relax, or sleep.
+        - button "Create Custom" [ref=f6e462] [cursor=pointer]
+      - generic [ref=f6e465]:
+        - button "All Moods 50" [ref=f6e466] [cursor=pointer]:
+          - generic [ref=f6e470]: All Moods
+          - generic [ref=f6e471]: "50"
+        - button "Sleep & Night 10" [ref=f6e472] [cursor=pointer]:
+          - generic [ref=f6e475]: Sleep & Night
+          - generic [ref=f6e476]: "10"
+        - button "Focus & Study 12" [ref=f6e477] [cursor=pointer]:
+          - generic [ref=f6e480]: Focus & Study
+          - generic [ref=f6e481]: "12"
+        - button "Meditation 5" [ref=f6e482] [cursor=pointer]:
+          - generic [ref=f6e491]: Meditation
+          - generic [ref=f6e492]: "5"
+        - button "Calm & Stress 7" [ref=f6e493] [cursor=pointer]:
+          - generic [ref=f6e496]: Calm & Stress
+          - generic [ref=f6e497]: "7"
+        - button "Morning & Energy 8" [ref=f6e498] [cursor=pointer]:
+          - generic [ref=f6e501]: Morning & Energy
+          - generic [ref=f6e502]: "8"
+        - button "Bio-Adaptive 2" [ref=f6e503] [cursor=pointer]:
+          - generic [ref=f6e506]: Bio-Adaptive
+          - generic [ref=f6e507]: "2"
+      - generic [ref=f6e508]:
+        - textbox "Search by mood, occasion, tag..." [ref=f6e510]
+        - generic [ref=f6e511]:
+          - button "All" [ref=f6e512] [cursor=pointer]
+          - button "Delta" [ref=f6e513] [cursor=pointer]
+          - button "Theta" [ref=f6e514] [cursor=pointer]
+          - button "Alpha" [ref=f6e515] [cursor=pointer]
+          - button "Beta" [ref=f6e516] [cursor=pointer]
+          - button "Gamma" [ref=f6e517] [cursor=pointer]
+      - generic [ref=f6e518]:
+        - generic [ref=f6e519] [cursor=pointer]:
+          - generic [ref=f6e520]:
+            - generic [ref=f6e521]:
+              - generic [ref=f6e522]: Bio-Adaptive
+              - generic [ref=f6e523]: 8.5 Hz (Alpha)
+            - heading "Auto-Adaptive Stress Shield" [level=4] [ref=f6e526]
+            - paragraph [ref=f6e527]: "Autonomous closed-loop bio-intervention: continuously monitors HR and RMSSD to glide into Alpha when sympathetic tone spikes."
+            - generic [ref=f6e528]:
+              - generic [ref=f6e529]: "#bio-adaptive"
+              - generic [ref=f6e530]: "#jitai"
+              - generic [ref=f6e531]: "#stress-relief"
+          - generic [ref=f6e532]:
+            - generic [ref=f6e533]:
+              - generic [ref=f6e534]: 210 Hz Base
+              - generic [ref=f6e535]: •
+              - generic [ref=f6e536]: 45m
+            - generic [ref=f6e537]: Active
+        - generic [ref=f6e542] [cursor=pointer]:
+          - generic [ref=f6e543]:
+            - generic [ref=f6e544]:
+              - generic [ref=f6e545]: Bio-Adaptive
+              - generic [ref=f6e546]: 2.0 Hz (Delta)
+            - heading "Smart Sleep Stage Synchronizer" [level=4] [ref=f6e548]
+            - paragraph [ref=f6e549]: Dynamically shifts beat frequencies based on live sleep stages (Light -> Delta 2Hz, REM -> Theta 6Hz).
+            - generic [ref=f6e550]:
+              - generic [ref=f6e551]: "#bio-adaptive"
+              - generic [ref=f6e552]: "#sleep"
+              - generic [ref=f6e553]: "#delta"
+          - generic [ref=f6e554]:
+            - generic [ref=f6e555]:
+              - generic [ref=f6e556]: 190 Hz Base
+              - generic [ref=f6e557]: •
+              - generic [ref=f6e558]: 90m
+            - generic [ref=f6e559]: Play
+        - generic [ref=f6e564] [cursor=pointer]:
+          - generic [ref=f6e565]:
+            - generic [ref=f6e566]:
+              - generic [ref=f6e567]: Rest
+              - generic [ref=f6e568]: 8.0 Hz (Alpha)
+            - heading "Sleep Onset Alpha-Theta" [level=4] [ref=f6e570]
+            - paragraph [ref=f6e571]: Gentle descent from relaxing alpha down to dreamy theta, ideal for falling asleep naturally.
+            - generic [ref=f6e572]:
+              - generic [ref=f6e573]: "#sleep"
+              - generic [ref=f6e574]: "#alpha"
+              - generic [ref=f6e575]: "#theta"
+          - generic [ref=f6e576]:
+            - generic [ref=f6e577]:
+              - generic [ref=f6e578]: 144 Hz Base
+              - generic [ref=f6e579]: •
+              - generic [ref=f6e580]: 45m
+            - generic [ref=f6e581]: Play
+        - generic [ref=f6e586] [cursor=pointer]:
+          - generic [ref=f6e587]:
+            - generic [ref=f6e588]:
+              - generic [ref=f6e589]: Rest
+              - generic [ref=f6e590]: 2.0 Hz (Delta)
+            - heading "Deep Sleep Delta" [level=4] [ref=f6e592]
+            - paragraph [ref=f6e593]: Slow 2Hz delta rhythmic entrainment to induce restorative, slow-wave deep sleep.
+            - generic [ref=f6e594]:
+              - generic [ref=f6e595]: "#sleep"
+              - generic [ref=f6e596]: "#delta"
+              - generic [ref=f6e597]: "#deep"
+          - generic [ref=f6e598]:
+            - generic [ref=f6e599]:
+              - generic [ref=f6e600]: 108 Hz Base
+              - generic [ref=f6e601]: •
+              - generic [ref=f6e602]: 90m
+            - generic [ref=f6e603]: Play
+        - generic [ref=f6e608] [cursor=pointer]:
+          - generic [ref=f6e609]:
+            - generic [ref=f6e610]:
+              - generic [ref=f6e611]: Rest
+              - generic [ref=f6e612]: 4.5 Hz (Theta)
+            - heading "Sleep Maintenance Theta" [level=4] [ref=f6e614]
+            - paragraph [ref=f6e615]: Continuous theta waves that sustain REM dreaming and prevent middle-of-the-night waking.
+            - generic [ref=f6e616]:
+              - generic [ref=f6e617]: "#sleep"
+              - generic [ref=f6e618]: "#theta"
+              - generic [ref=f6e619]: "#maintenance"
+          - generic [ref=f6e620]:
+            - generic [ref=f6e621]:
+              - generic [ref=f6e622]: 144 Hz Base
+              - generic [ref=f6e623]: •
+              - generic [ref=f6e624]: 90m
+            - generic [ref=f6e625]: Play
+        - generic [ref=f6e630] [cursor=pointer]:
+          - generic [ref=f6e631]:
+            - generic [ref=f6e632]:
+              - generic [ref=f6e633]: Rest
+              - generic [ref=f6e634]: 6.0 Hz (Theta)
+            - heading "Calm Night" [level=4] [ref=f6e636]
+            - paragraph [ref=f6e637]: Warm evening soundscape to quiet racing thoughts before sleep.
+            - generic [ref=f6e638]:
+              - generic [ref=f6e639]: "#sleep"
+              - generic [ref=f6e640]: "#calm"
+              - generic [ref=f6e641]: "#theta"
+          - generic [ref=f6e642]:
+            - generic [ref=f6e643]:
+              - generic [ref=f6e644]: 144 Hz Base
+              - generic [ref=f6e645]: •
+              - generic [ref=f6e646]: 60m
+            - generic [ref=f6e647]: Play
+        - generic [ref=f6e652] [cursor=pointer]:
+          - generic [ref=f6e653]:
+            - generic [ref=f6e654]:
+              - generic [ref=f6e655]: Rest
+              - generic [ref=f6e656]: 5.5 Hz (Theta)
+            - heading "Power Nap Theta" [level=4] [ref=f6e658]
+            - paragraph [ref=f6e659]: Quick 25-minute power nap sequence to recharge without grogginess.
+            - generic [ref=f6e660]:
+              - generic [ref=f6e661]: "#nap"
+              - generic [ref=f6e662]: "#theta"
+              - generic [ref=f6e663]: "#sleep"
+          - generic [ref=f6e664]:
+            - generic [ref=f6e665]:
+              - generic [ref=f6e666]: 144 Hz Base
+              - generic [ref=f6e667]: •
+              - generic [ref=f6e668]: 25m
+            - generic [ref=f6e669]: Play
+        - generic [ref=f6e674] [cursor=pointer]:
+          - generic [ref=f6e675]:
+            - generic [ref=f6e676]:
+              - generic [ref=f6e677]: Rest
+              - generic [ref=f6e678]: 6.5 Hz (Theta)
+            - heading "REM / Lucid Theta" [level=4] [ref=f6e680]
+            - paragraph [ref=f6e681]: Theta resonance targeting REM sleep cycles and heightened dream lucidity.
+            - generic [ref=f6e682]:
+              - generic [ref=f6e683]: "#rem"
+              - generic [ref=f6e684]: "#lucid"
+              - generic [ref=f6e685]: "#theta"
+          - generic [ref=f6e686]:
+            - generic [ref=f6e687]:
+              - generic [ref=f6e688]: 144 Hz Base
+              - generic [ref=f6e689]: •
+              - generic [ref=f6e690]: 45m
+            - generic [ref=f6e691]: Play
+        - generic [ref=f6e696] [cursor=pointer]:
+          - generic [ref=f6e697]:
+            - generic [ref=f6e698]:
+              - generic [ref=f6e699]: Rest
+              - generic [ref=f6e700]: 10.0 Hz (Alpha)
+            - heading "Gentle Wake Ramp" [level=4] [ref=f6e702]
+            - paragraph [ref=f6e703]: Gradual upward frequency ramp from sleep delta up into alert morning alpha.
+            - generic [ref=f6e704]:
+              - generic [ref=f6e705]: "#wake"
+              - generic [ref=f6e706]: "#morning"
+              - generic [ref=f6e707]: "#ramp"
+          - generic [ref=f6e708]:
+            - generic [ref=f6e709]:
+              - generic [ref=f6e710]: 108 Hz Base
+              - generic [ref=f6e711]: •
+              - generic [ref=f6e712]: 20m
+            - generic [ref=f6e713]: Play
+        - generic [ref=f6e718] [cursor=pointer]:
+          - generic [ref=f6e719]:
+            - generic [ref=f6e720]:
+              - generic [ref=f6e721]: Rest
+              - generic [ref=f6e722]: 2.0 Hz (Delta)
+            - heading "Delta Isochronic Sleep" [level=4] [ref=f6e724]
+            - paragraph [ref=f6e725]: Rhythmic isochronic pulses engineered to lock brainwaves into deep sleep.
+            - generic [ref=f6e726]:
+              - generic [ref=f6e727]: "#isochronic"
+              - generic [ref=f6e728]: "#delta"
+              - generic [ref=f6e729]: "#sleep"
+          - generic [ref=f6e730]:
+            - generic [ref=f6e731]:
+              - generic [ref=f6e732]: 108 Hz Base
+              - generic [ref=f6e733]: •
+              - generic [ref=f6e734]: 60m
+            - generic [ref=f6e735]: Play
+        - generic [ref=f6e740] [cursor=pointer]:
+          - generic [ref=f6e741]:
+            - generic [ref=f6e742]:
+              - generic [ref=f6e743]: Rest
+              - generic [ref=f6e744]: 2.0 Hz (Delta)
+            - heading "Brown Noise Delta Bed" [level=4] [ref=f6e746]
+            - paragraph [ref=f6e747]: Deep brown noise mask coupled with 2Hz delta beats for noisy environments.
+            - generic [ref=f6e748]:
+              - generic [ref=f6e749]: "#brown-noise"
+              - generic [ref=f6e750]: "#ambient"
+              - generic [ref=f6e751]: "#delta"
+          - generic [ref=f6e752]:
+            - generic [ref=f6e753]:
+              - generic [ref=f6e754]: 108 Hz Base
+              - generic [ref=f6e755]: •
+              - generic [ref=f6e756]: 90m
+            - generic [ref=f6e757]: Play
+        - generic [ref=f6e762] [cursor=pointer]:
+          - generic [ref=f6e763]:
+            - generic [ref=f6e764]:
+              - generic [ref=f6e765]: Rest
+              - generic [ref=f6e766]: 6.0 Hz (Theta)
+            - heading "Theta Descent" [level=4] [ref=f6e768]
+            - paragraph [ref=f6e769]: Long 60-minute theta descent protocol for insomnia relief.
+            - generic [ref=f6e770]:
+              - generic [ref=f6e771]: "#theta"
+              - generic [ref=f6e772]: "#sleep"
+              - generic [ref=f6e773]: "#ramp"
+          - generic [ref=f6e774]:
+            - generic [ref=f6e775]:
+              - generic [ref=f6e776]: 144 Hz Base
+              - generic [ref=f6e777]: •
+              - generic [ref=f6e778]: 60m
+            - generic [ref=f6e779]: Play
+        - generic [ref=f6e784] [cursor=pointer]:
+          - generic [ref=f6e785]:
+            - generic [ref=f6e786]:
+              - generic [ref=f6e787]: Focus
+              - generic [ref=f6e788]: 18.0 Hz (Beta)
+            - heading "Deep Work Beta" [level=4] [ref=f6e790]
+            - paragraph [ref=f6e791]: 18Hz beta frequency tuned for high-demand problem solving and deep work sprints.
+            - generic [ref=f6e792]:
+              - generic [ref=f6e793]: "#focus"
+              - generic [ref=f6e794]: "#beta"
+              - generic [ref=f6e795]: "#deep-work"
+          - generic [ref=f6e796]:
+            - generic [ref=f6e797]:
+              - generic [ref=f6e798]: 324 Hz Base
+              - generic [ref=f6e799]: •
+              - generic [ref=f6e800]: 50m
+            - generic [ref=f6e801]: Play
+        - generic [ref=f6e806] [cursor=pointer]:
+          - generic [ref=f6e807]:
+            - generic [ref=f6e808]:
+              - generic [ref=f6e809]: Focus
+              - generic [ref=f6e810]: 13.5 Hz (Beta)
+            - heading "Coding SMR" [level=4] [ref=f6e812]
+            - paragraph [ref=f6e813]: 13.5Hz Sensorimotor Rhythm (SMR) ideal for calm, sustained software development.
+            - generic [ref=f6e814]:
+              - generic [ref=f6e815]: "#coding"
+              - generic [ref=f6e816]: "#smr"
+              - generic [ref=f6e817]: "#focus"
+          - generic [ref=f6e818]:
+            - generic [ref=f6e819]:
+              - generic [ref=f6e820]: 216 Hz Base
+              - generic [ref=f6e821]: •
+              - generic [ref=f6e822]: 50m
+            - generic [ref=f6e823]: Play
+        - generic [ref=f6e828] [cursor=pointer]:
+          - generic [ref=f6e829]:
+            - generic [ref=f6e830]:
+              - generic [ref=f6e831]: Focus
+              - generic [ref=f6e832]: 14.0 Hz (Beta)
+            - heading "Reading Alpha-Beta" [level=4] [ref=f6e834]
+            - paragraph [ref=f6e835]: 14Hz hybrid state balancing calm retention with active reading comprehension.
+            - generic [ref=f6e836]:
+              - generic [ref=f6e837]: "#reading"
+              - generic [ref=f6e838]: "#alpha"
+              - generic [ref=f6e839]: "#beta"
+          - generic [ref=f6e840]:
+            - generic [ref=f6e841]:
+              - generic [ref=f6e842]: 324 Hz Base
+              - generic [ref=f6e843]: •
+              - generic [ref=f6e844]: 45m
+            - generic [ref=f6e845]: Play
+        - generic [ref=f6e850] [cursor=pointer]:
+          - generic [ref=f6e851]:
+            - generic [ref=f6e852]:
+              - generic [ref=f6e853]: Focus
+              - generic [ref=f6e854]: 20.0 Hz (Beta)
+            - heading "Study Beta" [level=4] [ref=f6e856]
+            - paragraph [ref=f6e857]: 20Hz beta stimulation for active study sessions and memorization.
+            - generic [ref=f6e858]:
+              - generic [ref=f6e859]: "#study"
+              - generic [ref=f6e860]: "#beta"
+              - generic [ref=f6e861]: "#focus"
+          - generic [ref=f6e862]:
+            - generic [ref=f6e863]:
+              - generic [ref=f6e864]: 324 Hz Base
+              - generic [ref=f6e865]: •
+              - generic [ref=f6e866]: 45m
+            - generic [ref=f6e867]: Play
+        - generic [ref=f6e872] [cursor=pointer]:
+          - generic [ref=f6e873]:
+            - generic [ref=f6e874]:
+              - generic [ref=f6e875]: Focus
+              - generic [ref=f6e876]: 40.0 Hz (Gamma)
+            - heading "Memory Gamma" [level=4] [ref=f6e878]
+            - paragraph [ref=f6e879]: 40Hz gamma coherence wave to enhance cognitive processing and memory recall.
+            - generic [ref=f6e880]:
+              - generic [ref=f6e881]: "#gamma"
+              - generic [ref=f6e882]: "#memory"
+              - generic [ref=f6e883]: "#focus"
+          - generic [ref=f6e884]:
+            - generic [ref=f6e885]:
+              - generic [ref=f6e886]: 432 Hz Base
+              - generic [ref=f6e887]: •
+              - generic [ref=f6e888]: 25m
+            - generic [ref=f6e889]: Play
+        - generic [ref=f6e894] [cursor=pointer]:
+          - generic [ref=f6e895]:
+            - generic [ref=f6e896]:
+              - generic [ref=f6e897]: Focus
+              - generic [ref=f6e898]: 16.0 Hz (Beta)
+            - heading "Flow State Beta" [level=4] [ref=f6e900]
+            - paragraph [ref=f6e901]: 16Hz sweet spot for effortless creative and analytical flow state.
+            - generic [ref=f6e902]:
+              - generic [ref=f6e903]: "#flow"
+              - generic [ref=f6e904]: "#beta"
+              - generic [ref=f6e905]: "#focus"
+          - generic [ref=f6e906]:
+            - generic [ref=f6e907]:
+              - generic [ref=f6e908]: 324 Hz Base
+              - generic [ref=f6e909]: •
+              - generic [ref=f6e910]: 60m
+            - generic [ref=f6e911]: Play
+        - generic [ref=f6e916] [cursor=pointer]:
+          - generic [ref=f6e917]:
+            - generic [ref=f6e918]:
+              - generic [ref=f6e919]: Focus
+              - generic [ref=f6e920]: 11.0 Hz (Alpha)
+            - heading "Writing Alpha" [level=4] [ref=f6e922]
+            - paragraph [ref=f6e923]: 11Hz high alpha promoting fluid verbal fluency and creative writing.
+            - generic [ref=f6e924]:
+              - generic [ref=f6e925]: "#writing"
+              - generic [ref=f6e926]: "#alpha"
+              - generic [ref=f6e927]: "#focus"
+          - generic [ref=f6e928]:
+            - generic [ref=f6e929]:
+              - generic [ref=f6e930]: 216 Hz Base
+              - generic [ref=f6e931]: •
+              - generic [ref=f6e932]: 45m
+            - generic [ref=f6e933]: Play
+        - generic [ref=f6e938] [cursor=pointer]:
+          - generic [ref=f6e939]:
+            - generic [ref=f6e940]:
+              - generic [ref=f6e941]: Focus
+              - generic [ref=f6e942]: 12.5 Hz (Alpha)
+            - heading "Attention SMR" [level=4] [ref=f6e944]
+            - paragraph [ref=f6e945]: 12.5Hz SMR calibration for ADHD focus management and distraction shielding.
+            - generic [ref=f6e946]:
+              - generic [ref=f6e947]: "#attention"
+              - generic [ref=f6e948]: "#smr"
+              - generic [ref=f6e949]: "#focus"
+          - generic [ref=f6e950]:
+            - generic [ref=f6e951]:
+              - generic [ref=f6e952]: 216 Hz Base
+              - generic [ref=f6e953]: •
+              - generic [ref=f6e954]: 40m
+            - generic [ref=f6e955]: Play
+        - generic [ref=f6e960] [cursor=pointer]:
+          - generic [ref=f6e961]:
+            - generic [ref=f6e962]:
+              - generic [ref=f6e963]: Focus
+              - generic [ref=f6e964]: 18.0 Hz (Beta)
+            - heading "Isochronic Focus Beta" [level=4] [ref=f6e966]
+            - paragraph [ref=f6e967]: 18Hz isochronic pulse train for intense laser-like attention.
+            - generic [ref=f6e968]:
+              - generic [ref=f6e969]: "#isochronic"
+              - generic [ref=f6e970]: "#beta"
+              - generic [ref=f6e971]: "#focus"
+          - generic [ref=f6e972]:
+            - generic [ref=f6e973]:
+              - generic [ref=f6e974]: 324 Hz Base
+              - generic [ref=f6e975]: •
+              - generic [ref=f6e976]: 40m
+            - generic [ref=f6e977]: Play
+        - generic [ref=f6e982] [cursor=pointer]:
+          - generic [ref=f6e983]:
+            - generic [ref=f6e984]:
+              - generic [ref=f6e985]: Focus
+              - generic [ref=f6e986]: 40.0 Hz (Gamma)
+            - heading "Gamma Burst" [level=4] [ref=f6e988]
+            - paragraph [ref=f6e989]: Short 15-minute 40Hz gamma session for mental clarity and breakthrough thinking.
+            - generic [ref=f6e990]:
+              - generic [ref=f6e991]: "#gamma"
+              - generic [ref=f6e992]: "#burst"
+              - generic [ref=f6e993]: "#focus"
+          - generic [ref=f6e994]:
+            - generic [ref=f6e995]:
+              - generic [ref=f6e996]: 432 Hz Base
+              - generic [ref=f6e997]: •
+              - generic [ref=f6e998]: 15m
+            - generic [ref=f6e999]: Play
+        - generic [ref=f6e1004] [cursor=pointer]:
+          - generic [ref=f6e1005]:
+            - generic [ref=f6e1006]:
+              - generic [ref=f6e1007]: Focus
+              - generic [ref=f6e1008]: 18.0 Hz (Beta)
+            - heading "Monaural Beta Focus" [level=4] [ref=f6e1010]
+            - paragraph [ref=f6e1011]: 18Hz monaural tone mix providing clear acoustic entrainment even through speakers.
+            - generic [ref=f6e1012]:
+              - generic [ref=f6e1013]: "#monaural"
+              - generic [ref=f6e1014]: "#beta"
+              - generic [ref=f6e1015]: "#focus"
+          - generic [ref=f6e1016]:
+            - generic [ref=f6e1017]:
+              - generic [ref=f6e1018]: 324 Hz Base
+              - generic [ref=f6e1019]: •
+              - generic [ref=f6e1020]: 45m
+            - generic [ref=f6e1021]: Play
+        - generic [ref=f6e1026] [cursor=pointer]:
+          - generic [ref=f6e1027]:
+            - generic [ref=f6e1028]:
+              - generic [ref=f6e1029]: Focus
+              - generic [ref=f6e1030]: 14.5 Hz (Beta)
+            - heading "Calm Low Beta" [level=4] [ref=f6e1032]
+            - paragraph [ref=f6e1033]: 14.5Hz relaxed focus without the jitter or anxiety of high beta.
+            - generic [ref=f6e1034]:
+              - generic [ref=f6e1035]: "#low-beta"
+              - generic [ref=f6e1036]: "#calm"
+              - generic [ref=f6e1037]: "#focus"
+          - generic [ref=f6e1038]:
+            - generic [ref=f6e1039]:
+              - generic [ref=f6e1040]: 324 Hz Base
+              - generic [ref=f6e1041]: •
+              - generic [ref=f6e1042]: 60m
+            - generic [ref=f6e1043]: Play
+        - generic [ref=f6e1048] [cursor=pointer]:
+          - generic [ref=f6e1049]:
+            - generic [ref=f6e1050]:
+              - generic [ref=f6e1051]: Energy
+              - generic [ref=f6e1052]: 14.0 Hz (Beta)
+            - heading "Morning Sunrise Ramp" [level=4] [ref=f6e1054]
+            - paragraph [ref=f6e1055]: Morning wake-up curve rising smoothly from 8Hz relaxation to 14Hz morning energy.
+            - generic [ref=f6e1056]:
+              - generic [ref=f6e1057]: "#morning"
+              - generic [ref=f6e1058]: "#sunrise"
+              - generic [ref=f6e1059]: "#ramp"
+          - generic [ref=f6e1060]:
+            - generic [ref=f6e1061]:
+              - generic [ref=f6e1062]: 324 Hz Base
+              - generic [ref=f6e1063]: •
+              - generic [ref=f6e1064]: 20m
+            - generic [ref=f6e1065]: Play
+        - generic [ref=f6e1070] [cursor=pointer]:
+          - generic [ref=f6e1071]:
+            - generic [ref=f6e1072]:
+              - generic [ref=f6e1073]: Energy
+              - generic [ref=f6e1074]: 18.0 Hz (Beta)
+            - heading "Morning Energy Beta" [level=4] [ref=f6e1076]
+            - paragraph [ref=f6e1077]: 18Hz burst of invigorating neural stimulation to replace morning fatigue.
+            - generic [ref=f6e1078]:
+              - generic [ref=f6e1079]: "#energy"
+              - generic [ref=f6e1080]: "#beta"
+              - generic [ref=f6e1081]: "#morning"
+          - generic [ref=f6e1082]:
+            - generic [ref=f6e1083]:
+              - generic [ref=f6e1084]: 324 Hz Base
+              - generic [ref=f6e1085]: •
+              - generic [ref=f6e1086]: 15m
+            - generic [ref=f6e1087]: Play
+        - generic [ref=f6e1092] [cursor=pointer]:
+          - generic [ref=f6e1093]:
+            - generic [ref=f6e1094]:
+              - generic [ref=f6e1095]: Energy
+              - generic [ref=f6e1096]: 22.0 Hz (Beta)
+            - heading "Isochronic Alertness" [level=4] [ref=f6e1098]
+            - paragraph [ref=f6e1099]: 22Hz high-energy isochronic rhythm for rapid alertness and motivation.
+            - generic [ref=f6e1100]:
+              - generic [ref=f6e1101]: "#isochronic"
+              - generic [ref=f6e1102]: "#alertness"
+              - generic [ref=f6e1103]: "#energy"
+          - generic [ref=f6e1104]:
+            - generic [ref=f6e1105]:
+              - generic [ref=f6e1106]: 324 Hz Base
+              - generic [ref=f6e1107]: •
+              - generic [ref=f6e1108]: 15m
+            - generic [ref=f6e1109]: Play
+        - generic [ref=f6e1114] [cursor=pointer]:
+          - generic [ref=f6e1115]:
+            - generic [ref=f6e1116]:
+              - generic [ref=f6e1117]: Energy
+              - generic [ref=f6e1118]: 36.0 Hz (Gamma)
+            - heading "Gamma Clarity" [level=4] [ref=f6e1120]
+            - paragraph [ref=f6e1121]: 36Hz gamma session for instant morning mental sharpness and brain fog clearing.
+            - generic [ref=f6e1122]:
+              - generic [ref=f6e1123]: "#gamma"
+              - generic [ref=f6e1124]: "#clarity"
+              - generic [ref=f6e1125]: "#energy"
+          - generic [ref=f6e1126]:
+            - generic [ref=f6e1127]:
+              - generic [ref=f6e1128]: 432 Hz Base
+              - generic [ref=f6e1129]: •
+              - generic [ref=f6e1130]: 10m
+            - generic [ref=f6e1131]: Play
+        - generic [ref=f6e1136] [cursor=pointer]:
+          - generic [ref=f6e1137]:
+            - generic [ref=f6e1138]:
+              - generic [ref=f6e1139]: Energy
+              - generic [ref=f6e1140]: 15.0 Hz (Beta)
+            - heading "Walk Rhythm Beta" [level=4] [ref=f6e1142]
+            - paragraph [ref=f6e1143]: 15Hz rhythm matched to brisk walking cadence and outdoor vitality.
+            - generic [ref=f6e1144]:
+              - generic [ref=f6e1145]: "#walk"
+              - generic [ref=f6e1146]: "#rhythm"
+              - generic [ref=f6e1147]: "#energy"
+          - generic [ref=f6e1148]:
+            - generic [ref=f6e1149]:
+              - generic [ref=f6e1150]: 324 Hz Base
+              - generic [ref=f6e1151]: •
+              - generic [ref=f6e1152]: 30m
+            - generic [ref=f6e1153]: Play
+        - generic [ref=f6e1158] [cursor=pointer]:
+          - generic [ref=f6e1159]:
+            - generic [ref=f6e1160]:
+              - generic [ref=f6e1161]: Energy
+              - generic [ref=f6e1162]: 10.0 Hz (Alpha)
+            - heading "Midday Alpha Reset" [level=4] [ref=f6e1164]
+            - paragraph [ref=f6e1165]: 10Hz 10-minute midday reboot to clear afternoon mental fatigue.
+            - generic [ref=f6e1166]:
+              - generic [ref=f6e1167]: "#alpha"
+              - generic [ref=f6e1168]: "#reset"
+              - generic [ref=f6e1169]: "#midday"
+          - generic [ref=f6e1170]:
+            - generic [ref=f6e1171]:
+              - generic [ref=f6e1172]: 216 Hz Base
+              - generic [ref=f6e1173]: •
+              - generic [ref=f6e1174]: 10m
+            - generic [ref=f6e1175]: Play
+        - generic [ref=f6e1180] [cursor=pointer]:
+          - generic [ref=f6e1181]:
+            - generic [ref=f6e1182]:
+              - generic [ref=f6e1183]: Energy
+              - generic [ref=f6e1184]: 25.0 Hz (Beta)
+            - heading "Pre-Workout High Beta" [level=4] [ref=f6e1186]
+            - paragraph [ref=f6e1187]: 25Hz high beta drive for peak physical activation and workout motivation.
+            - generic [ref=f6e1188]:
+              - generic [ref=f6e1189]: "#high-beta"
+              - generic [ref=f6e1190]: "#preworkout"
+              - generic [ref=f6e1191]: "#energy"
+          - generic [ref=f6e1192]:
+            - generic [ref=f6e1193]:
+              - generic [ref=f6e1194]: 324 Hz Base
+              - generic [ref=f6e1195]: •
+              - generic [ref=f6e1196]: 10m
+            - generic [ref=f6e1197]: Play
+        - generic [ref=f6e1202] [cursor=pointer]:
+          - generic [ref=f6e1203]:
+            - generic [ref=f6e1204]:
+              - generic [ref=f6e1205]: Energy
+              - generic [ref=f6e1206]: 10.0 Hz (Alpha)
+            - heading "Gentle Alpha Wake" [level=4] [ref=f6e1208]
+            - paragraph [ref=f6e1209]: 10Hz gentle wakefulness ramp for a soft, alarm-free morning rise.
+            - generic [ref=f6e1210]:
+              - generic [ref=f6e1211]: "#wake"
+              - generic [ref=f6e1212]: "#alpha"
+              - generic [ref=f6e1213]: "#gentle"
+          - generic [ref=f6e1214]:
+            - generic [ref=f6e1215]:
+              - generic [ref=f6e1216]: 216 Hz Base
+              - generic [ref=f6e1217]: •
+              - generic [ref=f6e1218]: 15m
+            - generic [ref=f6e1219]: Play
+        - generic [ref=f6e1224] [cursor=pointer]:
+          - generic [ref=f6e1225]:
+            - generic [ref=f6e1226]:
+              - generic [ref=f6e1227]: Relax
+              - generic [ref=f6e1228]: 9.5 Hz (Alpha)
+            - heading "Alpha Unwind" [level=4] [ref=f6e1230]
+            - paragraph [ref=f6e1231]: 9.5Hz alpha wave to release muscle tension and workday stress.
+            - generic [ref=f6e1232]:
+              - generic [ref=f6e1233]: "#alpha"
+              - generic [ref=f6e1234]: "#unwind"
+              - generic [ref=f6e1235]: "#relax"
+          - generic [ref=f6e1236]:
+            - generic [ref=f6e1237]:
+              - generic [ref=f6e1238]: 216 Hz Base
+              - generic [ref=f6e1239]: •
+              - generic [ref=f6e1240]: 30m
+            - generic [ref=f6e1241]: Play
+        - generic [ref=f6e1246] [cursor=pointer]:
+          - generic [ref=f6e1247]:
+            - generic [ref=f6e1248]:
+              - generic [ref=f6e1249]: Relax
+              - generic [ref=f6e1250]: 6.0 Hz (Theta)
+            - heading "Evening Theta" [level=4] [ref=f6e1252]
+            - paragraph [ref=f6e1253]: 6Hz deep evening theta to transition peacefully into night mode.
+            - generic [ref=f6e1254]:
+              - generic [ref=f6e1255]: "#theta"
+              - generic [ref=f6e1256]: "#evening"
+              - generic [ref=f6e1257]: "#relax"
+          - generic [ref=f6e1258]:
+            - generic [ref=f6e1259]:
+              - generic [ref=f6e1260]: 144 Hz Base
+              - generic [ref=f6e1261]: •
+              - generic [ref=f6e1262]: 30m
+            - generic [ref=f6e1263]: Play
+        - generic [ref=f6e1268] [cursor=pointer]:
+          - generic [ref=f6e1269]:
+            - generic [ref=f6e1270]:
+              - generic [ref=f6e1271]: Meditation
+              - generic [ref=f6e1272]: 10.0 Hz (Alpha)
+            - heading "Alpha Meditation" [level=4] [ref=f6e1274]
+            - paragraph [ref=f6e1275]: 10Hz traditional zen meditation frequency for stillness and present awareness.
+            - generic [ref=f6e1276]:
+              - generic [ref=f6e1277]: "#alpha"
+              - generic [ref=f6e1278]: "#meditation"
+          - generic [ref=f6e1279]:
+            - generic [ref=f6e1280]:
+              - generic [ref=f6e1281]: 216 Hz Base
+              - generic [ref=f6e1282]: •
+              - generic [ref=f6e1283]: 20m
+            - generic [ref=f6e1284]: Play
+        - generic [ref=f6e1289] [cursor=pointer]:
+          - generic [ref=f6e1290]:
+            - generic [ref=f6e1291]:
+              - generic [ref=f6e1292]: Meditation
+              - generic [ref=f6e1293]: 6.5 Hz (Theta)
+            - heading "Theta Meditation" [level=4] [ref=f6e1295]
+            - paragraph [ref=f6e1296]: 6.5Hz deep theta for transcendental meditation and subconscious stillness.
+            - generic [ref=f6e1297]:
+              - generic [ref=f6e1298]: "#theta"
+              - generic [ref=f6e1299]: "#meditation"
+          - generic [ref=f6e1300]:
+            - generic [ref=f6e1301]:
+              - generic [ref=f6e1302]: 144 Hz Base
+              - generic [ref=f6e1303]: •
+              - generic [ref=f6e1304]: 30m
+            - generic [ref=f6e1305]: Play
+        - generic [ref=f6e1310] [cursor=pointer]:
+          - generic [ref=f6e1311]:
+            - generic [ref=f6e1312]:
+              - generic [ref=f6e1313]: Meditation
+              - generic [ref=f6e1314]: 40.0 Hz (Gamma)
+            - heading "Gamma Compassion" [level=4] [ref=f6e1316]
+            - paragraph [ref=f6e1317]: 40Hz loving-kindness gamma synchrony based on neuroimaging research.
+            - generic [ref=f6e1318]:
+              - generic [ref=f6e1319]: "#gamma"
+              - generic [ref=f6e1320]: "#compassion"
+              - generic [ref=f6e1321]: "#meditation"
+          - generic [ref=f6e1322]:
+            - generic [ref=f6e1323]:
+              - generic [ref=f6e1324]: 432 Hz Base
+              - generic [ref=f6e1325]: •
+              - generic [ref=f6e1326]: 15m
+            - generic [ref=f6e1327]: Play
+        - generic [ref=f6e1332] [cursor=pointer]:
+          - generic [ref=f6e1333]:
+            - generic [ref=f6e1334]:
+              - generic [ref=f6e1335]: Relax
+              - generic [ref=f6e1336]: 8.5 Hz (Alpha)
+            - heading "Low Alpha Calm" [level=4] [ref=f6e1338]
+            - paragraph [ref=f6e1339]: 8.5Hz low alpha to soothe panic, agitation, or sensory overload.
+            - generic [ref=f6e1340]:
+              - generic [ref=f6e1341]: "#low-alpha"
+              - generic [ref=f6e1342]: "#calm"
+          - generic [ref=f6e1343]:
+            - generic [ref=f6e1344]:
+              - generic [ref=f6e1345]: 216 Hz Base
+              - generic [ref=f6e1346]: •
+              - generic [ref=f6e1347]: 20m
+            - generic [ref=f6e1348]: Play
+        - generic [ref=f6e1353] [cursor=pointer]:
+          - generic [ref=f6e1354]:
+            - generic [ref=f6e1355]:
+              - generic [ref=f6e1356]: Relax
+              - generic [ref=f6e1357]: 6.0 Hz (Theta)
+            - heading "Breath Theta Unwind" [level=4] [ref=f6e1359]
+            - paragraph [ref=f6e1360]: 6Hz theta coupled to diaphragmatic breathing patterns.
+            - generic [ref=f6e1361]:
+              - generic [ref=f6e1362]: "#breath"
+              - generic [ref=f6e1363]: "#theta"
+              - generic [ref=f6e1364]: "#relax"
+          - generic [ref=f6e1365]:
+            - generic [ref=f6e1366]:
+              - generic [ref=f6e1367]: 144 Hz Base
+              - generic [ref=f6e1368]: •
+              - generic [ref=f6e1369]: 20m
+            - generic [ref=f6e1370]: Play
+        - generic [ref=f6e1375] [cursor=pointer]:
+          - generic [ref=f6e1376]:
+            - generic [ref=f6e1377]:
+              - generic [ref=f6e1378]: Meditation
+              - generic [ref=f6e1379]: 6.2 Hz (Theta)
+            - heading "Body Scan Theta" [level=4] [ref=f6e1381]
+            - paragraph [ref=f6e1382]: 6.2Hz frequency designed specifically for somatic body scan meditation.
+            - generic [ref=f6e1383]:
+              - generic [ref=f6e1384]: "#body-scan"
+              - generic [ref=f6e1385]: "#theta"
+              - generic [ref=f6e1386]: "#meditation"
+          - generic [ref=f6e1387]:
+            - generic [ref=f6e1388]:
+              - generic [ref=f6e1389]: 144 Hz Base
+              - generic [ref=f6e1390]: •
+              - generic [ref=f6e1391]: 25m
+            - generic [ref=f6e1392]: Play
+        - generic [ref=f6e1397] [cursor=pointer]:
+          - generic [ref=f6e1398]:
+            - generic [ref=f6e1399]:
+              - generic [ref=f6e1400]: Meditation
+              - generic [ref=f6e1401]: 9.0 Hz (Alpha)
+            - heading "Mindfulness Alpha" [level=4] [ref=f6e1403]
+            - paragraph [ref=f6e1404]: 9Hz mindfulness anchor for seated breath observation.
+            - generic [ref=f6e1405]:
+              - generic [ref=f6e1406]: "#mindfulness"
+              - generic [ref=f6e1407]: "#alpha"
+              - generic [ref=f6e1408]: "#meditation"
+          - generic [ref=f6e1409]:
+            - generic [ref=f6e1410]:
+              - generic [ref=f6e1411]: 216 Hz Base
+              - generic [ref=f6e1412]: •
+              - generic [ref=f6e1413]: 20m
+            - generic [ref=f6e1414]: Play
+        - generic [ref=f6e1419] [cursor=pointer]:
+          - generic [ref=f6e1420]:
+            - generic [ref=f6e1421]:
+              - generic [ref=f6e1422]: Relax
+              - generic [ref=f6e1423]: 9.5 Hz (Alpha)
+            - heading "Nature Alpha Bed" [level=4] [ref=f6e1425]
+            - paragraph [ref=f6e1426]: 9.5Hz alpha frequency nestled in a soft natural harmonic noise texture.
+            - generic [ref=f6e1427]:
+              - generic [ref=f6e1428]: "#nature"
+              - generic [ref=f6e1429]: "#ambient"
+              - generic [ref=f6e1430]: "#alpha"
+          - generic [ref=f6e1431]:
+            - generic [ref=f6e1432]:
+              - generic [ref=f6e1433]: 216 Hz Base
+              - generic [ref=f6e1434]: •
+              - generic [ref=f6e1435]: 30m
+            - generic [ref=f6e1436]: Play
+        - generic [ref=f6e1441] [cursor=pointer]:
+          - generic [ref=f6e1442]:
+            - generic [ref=f6e1443]:
+              - generic [ref=f6e1444]: Relax
+              - generic [ref=f6e1445]: 10.0 Hz (Alpha)
+            - heading "Monaural Alpha Relax" [level=4] [ref=f6e1447]
+            - paragraph [ref=f6e1448]: 10Hz monaural beat suitable for meditation without headphones.
+            - generic [ref=f6e1449]:
+              - generic [ref=f6e1450]: "#monaural"
+              - generic [ref=f6e1451]: "#alpha"
+              - generic [ref=f6e1452]: "#relax"
+          - generic [ref=f6e1453]:
+            - generic [ref=f6e1454]:
+              - generic [ref=f6e1455]: 216 Hz Base
+              - generic [ref=f6e1456]: •
+              - generic [ref=f6e1457]: 25m
+            - generic [ref=f6e1458]: Play
+        - generic [ref=f6e1463] [cursor=pointer]:
+          - generic [ref=f6e1464]:
+            - generic [ref=f6e1465]:
+              - generic [ref=f6e1466]: Relax
+              - generic [ref=f6e1467]: 6.0 Hz (Theta)
+            - heading "Isochronic Theta Relax" [level=4] [ref=f6e1469]
+            - paragraph [ref=f6e1470]: 6Hz isochronic soothing tone for effortless nervous system down-regulation.
+            - generic [ref=f6e1471]:
+              - generic [ref=f6e1472]: "#isochronic"
+              - generic [ref=f6e1473]: "#theta"
+              - generic [ref=f6e1474]: "#relax"
+          - generic [ref=f6e1475]:
+            - generic [ref=f6e1476]:
+              - generic [ref=f6e1477]: 144 Hz Base
+              - generic [ref=f6e1478]: •
+              - generic [ref=f6e1479]: 25m
+            - generic [ref=f6e1480]: Play
+        - generic [ref=f6e1485] [cursor=pointer]:
+          - generic [ref=f6e1486]:
+            - generic [ref=f6e1487]:
+              - generic [ref=f6e1488]: Custom
+              - generic [ref=f6e1489]: 2.0 Hz (Delta)
+            - heading "Delta Band Reference" [level=4] [ref=f6e1491]
+            - paragraph [ref=f6e1492]: Pure 2.0Hz Delta reference band tone.
+            - generic [ref=f6e1493]:
+              - generic [ref=f6e1494]: "#delta"
+              - generic [ref=f6e1495]: "#reference"
+          - generic [ref=f6e1496]:
+            - generic [ref=f6e1497]:
+              - generic [ref=f6e1498]: 108 Hz Base
+              - generic [ref=f6e1499]: •
+              - generic [ref=f6e1500]: 10m
+            - generic [ref=f6e1501]: Play
+        - generic [ref=f6e1506] [cursor=pointer]:
+          - generic [ref=f6e1507]:
+            - generic [ref=f6e1508]:
+              - generic [ref=f6e1509]: Custom
+              - generic [ref=f6e1510]: 6.0 Hz (Theta)
+            - heading "Theta Band Reference" [level=4] [ref=f6e1512]
+            - paragraph [ref=f6e1513]: Pure 6.0Hz Theta reference band tone.
+            - generic [ref=f6e1514]:
+              - generic [ref=f6e1515]: "#theta"
+              - generic [ref=f6e1516]: "#reference"
+          - generic [ref=f6e1517]:
+            - generic [ref=f6e1518]:
+              - generic [ref=f6e1519]: 144 Hz Base
+              - generic [ref=f6e1520]: •
+              - generic [ref=f6e1521]: 10m
+            - generic [ref=f6e1522]: Play
+        - generic [ref=f6e1527] [cursor=pointer]:
+          - generic [ref=f6e1528]:
+            - generic [ref=f6e1529]:
+              - generic [ref=f6e1530]: Custom
+              - generic [ref=f6e1531]: 10.0 Hz (Alpha)
+            - heading "Alpha Band Reference" [level=4] [ref=f6e1533]
+            - paragraph [ref=f6e1534]: Pure 10.0Hz Alpha reference band tone.
+            - generic [ref=f6e1535]:
+              - generic [ref=f6e1536]: "#alpha"
+              - generic [ref=f6e1537]: "#reference"
+          - generic [ref=f6e1538]:
+            - generic [ref=f6e1539]:
+              - generic [ref=f6e1540]: 216 Hz Base
+              - generic [ref=f6e1541]: •
+              - generic [ref=f6e1542]: 10m
+            - generic [ref=f6e1543]: Play
+        - generic [ref=f6e1548] [cursor=pointer]:
+          - generic [ref=f6e1549]:
+            - generic [ref=f6e1550]:
+              - generic [ref=f6e1551]: Custom
+              - generic [ref=f6e1552]: 13.0 Hz (Beta)
+            - heading "SMR Band Reference" [level=4] [ref=f6e1554]
+            - paragraph [ref=f6e1555]: Pure 13.0Hz SMR reference band tone.
+            - generic [ref=f6e1556]:
+              - generic [ref=f6e1557]: "#smr"
+              - generic [ref=f6e1558]: "#reference"
+          - generic [ref=f6e1559]:
+            - generic [ref=f6e1560]:
+              - generic [ref=f6e1561]: 216 Hz Base
+              - generic [ref=f6e1562]: •
+              - generic [ref=f6e1563]: 10m
+            - generic [ref=f6e1564]: Play
+        - generic [ref=f6e1569] [cursor=pointer]:
+          - generic [ref=f6e1570]:
+            - generic [ref=f6e1571]:
+              - generic [ref=f6e1572]: Custom
+              - generic [ref=f6e1573]: 20.0 Hz (Beta)
+            - heading "Beta Band Reference" [level=4] [ref=f6e1575]
+            - paragraph [ref=f6e1576]: Pure 20.0Hz Beta reference band tone.
+            - generic [ref=f6e1577]:
+              - generic [ref=f6e1578]: "#beta"
+              - generic [ref=f6e1579]: "#reference"
+          - generic [ref=f6e1580]:
+            - generic [ref=f6e1581]:
+              - generic [ref=f6e1582]: 324 Hz Base
+              - generic [ref=f6e1583]: •
+              - generic [ref=f6e1584]: 10m
+            - generic [ref=f6e1585]: Play
+        - generic [ref=f6e1590] [cursor=pointer]:
+          - generic [ref=f6e1591]:
+            - generic [ref=f6e1592]:
+              - generic [ref=f6e1593]: Custom
+              - generic [ref=f6e1594]: 40.0 Hz (Gamma)
+            - heading "Gamma Band Reference" [level=4] [ref=f6e1596]
+            - paragraph [ref=f6e1597]: Pure 40.0Hz Gamma reference band tone.
+            - generic [ref=f6e1598]:
+              - generic [ref=f6e1599]: "#gamma"
+              - generic [ref=f6e1600]: "#reference"
+          - generic [ref=f6e1601]:
+            - generic [ref=f6e1602]:
+              - generic [ref=f6e1603]: 432 Hz Base
+              - generic [ref=f6e1604]: •
+              - generic [ref=f6e1605]: 10m
+            - generic [ref=f6e1606]: Play
+  - generic [ref=f6e174]:
+    - button "Start Audio" [ref=f6e175] [cursor=pointer]
+    - generic [ref=f6e178]:
+      - generic [ref=f6e179]:
+        - generic [ref=f6e180]:
+          - generic [ref=f6e181]: 10.0 Hz
+          - generic [ref=f6e182]: (200 Hz)
+        - generic [ref=f6e183]: Beats Off
+      - generic [ref=f6e184]:
+        - button "-0.5" [ref=f6e185] [cursor=pointer]
+        - button "+0.5" [ref=f6e186] [cursor=pointer]
+        - slider [ref=f6e192] [cursor=pointer]: "0.75"
+  - generic [ref=f6e194]:
+    - button "Home" [ref=f6e195] [cursor=pointer]
+    - button "Music" [ref=f6e199] [cursor=pointer]
+    - button "Presets" [active] [ref=f6e206] [cursor=pointer]
+    - button "Bio-Sync" [ref=f6e217] [cursor=pointer]
+    - button "Sleep" [ref=f6e222] [cursor=pointer]
+    - button "Devices" [ref=f6e227] [cursor=pointer]

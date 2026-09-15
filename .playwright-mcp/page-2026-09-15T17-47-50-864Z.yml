@@ -1,0 +1,147 @@
+- generic [ref=f6e4]:
+  - banner [ref=f6e5]:
+    - generic [ref=f6e7]:
+      - generic [ref=f6e8] [cursor=pointer]: NeuroLoop
+      - generic [ref=f6e20]:
+        - button "75 BPM" [ref=f6e235] [cursor=pointer]
+        - button "View Insights" [ref=f6e31] [cursor=pointer]
+        - button "Toggle Theme" [ref=f6e33] [cursor=pointer]
+  - generic [ref=f6e238]:
+    - generic [ref=f6e243]:
+      - generic [ref=f6e244]:
+        - generic [ref=f6e245]: Elevated Stress Detected
+        - generic [ref=f6e248]: 09:17:07 PM
+      - paragraph [ref=f6e249]: We noticed your metrics are elevated. Would you like to switch to a calming audio session?
+    - generic [ref=f6e250]:
+      - button "Play Calming Audio" [ref=f6e251] [cursor=pointer]
+      - button "Dismiss Alert" [ref=f6e254] [cursor=pointer]
+  - main [ref=f6e36]:
+    - generic [ref=f6e258]:
+      - generic [ref=f6e259]:
+        - generic [ref=f6e267]:
+          - heading "Music & Soundscapes" [level=2] [ref=f6e268]
+          - paragraph [ref=f6e269]: Play calming music while you focus or relax.
+        - button "Add Custom Audio" [ref=f6e271] [cursor=pointer]
+      - generic [ref=f6e277]:
+        - generic [ref=f6e278]: Solfeggio Frequencies
+        - generic [ref=f6e286]:
+          - generic [ref=f6e287]:
+            - generic [ref=f6e288]:
+              - generic [ref=f6e289]: DNA Repair & Transformation
+              - heading "528 Hz Solfeggio Resonator" [level=3] [ref=f6e290]
+              - paragraph [ref=f6e291]: Harmonic Soundscape Engine • Procedural Web Audio Synth
+            - generic [ref=f6e292]:
+              - button "Layer Mode" [ref=f6e293]
+              - button "Carrier Mode" [ref=f6e294]
+          - generic [ref=f6e295]:
+            - slider [ref=f6e297] [cursor=pointer]: "0"
+            - generic [ref=f6e298]:
+              - generic [ref=f6e299]: 0:00
+              - generic [ref=f6e300]: 10:00
+          - generic [ref=f6e301]:
+            - generic [ref=f6e302]:
+              - button "Previous Track" [ref=f6e303] [cursor=pointer]
+              - button "Play" [ref=f6e306] [cursor=pointer]
+              - button "Next Track" [ref=f6e309] [cursor=pointer]
+              - button "Loop Track" [ref=f6e312] [cursor=pointer]
+            - generic [ref=f6e318]:
+              - slider [ref=f6e323] [cursor=pointer]: "0.7"
+              - generic [ref=f6e324]: 70%
+      - generic [ref=f6e325]:
+        - generic [ref=f6e326]:
+          - heading "Audio Volume Balance" [level=3] [ref=f6e329]
+          - generic [ref=f6e330]:
+            - generic [ref=f6e331]: "Background Tone:"
+            - button "Start Tone" [ref=f6e332] [cursor=pointer]
+        - generic [ref=f6e336]:
+          - generic [ref=f6e337]:
+            - generic [ref=f6e338]:
+              - generic [ref=f6e339]: Music Volume
+              - generic [ref=f6e340]: 70%
+            - slider [ref=f6e341] [cursor=pointer]: "0.7"
+          - generic [ref=f6e342]:
+            - generic [ref=f6e343]:
+              - generic [ref=f6e344]: Tone Volume
+              - generic [ref=f6e345]: 85%
+            - slider [ref=f6e346] [cursor=pointer]: "0.85"
+          - generic [ref=f6e347]:
+            - generic [ref=f6e348]:
+              - generic [ref=f6e349]: Master Volume
+              - generic [ref=f6e350]: 75%
+            - slider [ref=f6e351] [cursor=pointer]: "0.75"
+      - generic [ref=f6e353] [cursor=pointer]:
+        - generic [ref=f6e358]: Drop local music files here or click to browse
+        - generic [ref=f6e359]: Supports MP3, WAV, FLAC, M4A, OGG, and AAC directly from your device storage.
+      - generic [ref=f6e360]:
+        - generic [ref=f6e361]:
+          - heading "Soundscape & Track Library" [level=3] [ref=f6e362]
+          - generic [ref=f6e363]: 6 available
+        - generic [ref=f6e364]:
+          - button "All" [ref=f6e365] [cursor=pointer]
+          - button "Atmospheric Drone" [ref=f6e366] [cursor=pointer]
+          - button "Solfeggio Frequencies" [ref=f6e367] [cursor=pointer]
+          - button "Lo-Fi Chill" [ref=f6e368] [cursor=pointer]
+          - button "Nature & Rain" [ref=f6e369] [cursor=pointer]
+          - button "Local Audio" [ref=f6e370] [cursor=pointer]
+        - generic [ref=f6e371]:
+          - generic [ref=f6e372] [cursor=pointer]:
+            - generic [ref=f6e377]:
+              - generic [ref=f6e378]: 528 Hz Solfeggio Resonator
+              - generic [ref=f6e381]: Harmonic Soundscape Engine
+            - generic [ref=f6e382]:
+              - generic [ref=f6e383]: DNA Repair
+              - generic [ref=f6e384]: 10:00
+          - generic [ref=f6e385] [cursor=pointer]:
+            - generic [ref=f6e390]:
+              - generic [ref=f6e391]: Ethereal Deep Space Drone
+              - generic [ref=f6e393]: 432 Hz Root Synthesizer
+            - generic [ref=f6e394]:
+              - generic [ref=f6e395]: Deep Stillness
+              - generic [ref=f6e396]: 15:00
+          - generic [ref=f6e397] [cursor=pointer]:
+            - generic [ref=f6e402]:
+              - generic [ref=f6e403]: Pacific Ocean Midnight Tides
+              - generic [ref=f6e405]: Organic Natural Acoustic Field
+            - generic [ref=f6e406]:
+              - generic [ref=f6e407]: Insomnia Relief
+              - generic [ref=f6e408]: 20:00
+          - generic [ref=f6e409] [cursor=pointer]:
+            - generic [ref=f6e414]:
+              - generic [ref=f6e415]: Midnight Coding Lo-Fi Cadence
+              - generic [ref=f6e417]: Warm Vinyl Electric Rhodes
+            - generic [ref=f6e418]:
+              - generic [ref=f6e419]: Deep Work
+              - generic [ref=f6e420]: 12:00
+          - generic [ref=f6e421] [cursor=pointer]:
+            - generic [ref=f6e426]:
+              - generic [ref=f6e427]: Singing Bowls of Lhasa
+              - generic [ref=f6e429]: Resonant Metallic Harmonics
+            - generic [ref=f6e430]:
+              - generic [ref=f6e431]: Zen Mindfulness
+              - generic [ref=f6e432]: 13:20
+          - generic [ref=f6e433] [cursor=pointer]:
+            - generic [ref=f6e438]:
+              - generic [ref=f6e439]: Interstellar Nebula Pad
+              - generic [ref=f6e441]: Analog Swept Filter Matrix
+            - generic [ref=f6e442]:
+              - generic [ref=f6e443]: Lucid Dreaming
+              - generic [ref=f6e444]: 15:00
+  - generic [ref=f6e174]:
+    - button "Start Audio" [ref=f6e175] [cursor=pointer]
+    - generic [ref=f6e178]:
+      - generic [ref=f6e179]:
+        - generic [ref=f6e180]:
+          - generic [ref=f6e181]: 10.0 Hz
+          - generic [ref=f6e182]: (200 Hz)
+        - generic [ref=f6e183]: Beats Off
+      - generic [ref=f6e184]:
+        - button "-0.5" [ref=f6e185] [cursor=pointer]
+        - button "+0.5" [ref=f6e186] [cursor=pointer]
+        - slider [ref=f6e192] [cursor=pointer]: "0.75"
+  - generic [ref=f6e194]:
+    - button "Home" [ref=f6e195] [cursor=pointer]
+    - button "Music" [active] [ref=f6e199] [cursor=pointer]
+    - button "Presets" [ref=f6e206] [cursor=pointer]
+    - button "Bio-Sync" [ref=f6e217] [cursor=pointer]
+    - button "Sleep" [ref=f6e222] [cursor=pointer]
+    - button "Devices" [ref=f6e227] [cursor=pointer]
