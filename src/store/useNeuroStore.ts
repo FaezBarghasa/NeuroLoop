@@ -298,7 +298,7 @@ interface NeuroState {
   deletePreset: (presetId: string) => void;
 }
 
-export const useNeuroStore = create<NeuroState>((set, get) => {
+export const useNeuroStore = create<NeuroState>()((set, get) => {
   // Initialize DSP engine glide callback
   dspEngine.onGlideProgress((currentBeatHz, progress, isCrossfading) => {
     set((state) => ({
@@ -1224,7 +1224,7 @@ export const useNeuroStore = create<NeuroState>((set, get) => {
         'from-cyan-600/30 via-sky-600/20 to-zinc-900/40',
       ];
 
-      Array.from(files).forEach((file, index) => {
+      Array.from(files).forEach((file: File, index: number) => {
         if (file.type.startsWith('audio/') || file.name.endsWith('.mp3') || file.name.endsWith('.wav')) {
           const blobUrl = URL.createObjectURL(file);
           newTracks.push({
