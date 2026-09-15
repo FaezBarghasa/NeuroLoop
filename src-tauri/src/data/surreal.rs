@@ -546,11 +546,10 @@ impl NeuroStore {
         Ok(())
     }
 
-    #[cfg(test)]
     pub async fn init_memory() -> Result<Self, surrealdb::Error> {
         use surrealdb::engine::local::Mem;
         let db = Surreal::new::<Mem>(()).await?;
-        db.use_ns("neuroloop_test").use_db("wellness_test").await?;
+        db.use_ns("neuroloop").use_db("wellness").await?;
         Ok(Self { db })
     }
 }

@@ -26,11 +26,20 @@ pub fn run() {
             let db_path = app_data_dir.join("neuroloop.db");
             let db_path_str = db_path.to_str().unwrap_or("./neuroloop_data/neuroloop.db");
 
-            // Initialize SurrealDB local storage asynchronously in Tokio
+            // Initialize SurrealDB local storage asynchronously in Tokio with robust fallback
             let store = tauri::async_runtime::block_on(async {
-                NeuroStore::init_embedded(db_path_str)
-                    .await
-                    .expect("Failed to initialize SurrealDB engine")
+                match NeuroStore::init_embedded(db_path_str).await {
+                    Ok(s) => s,
+                    Err(err) => {
+                        eprintln!(
+                            "Warning: Failed to initialize file-based SurrealDB at {}: {}. Falling back to in-memory store.",
+                            db_path_str, err
+                        );
+                        NeuroStore::init_memory()
+                            .await
+                            .unwrap_or_else(|e| panic!("Critical: In-memory DB failed: {}", e))
+                    }
+                }
             });
 
             let audio_engine = AudioEngine::new().unwrap_or_else(|e| {
