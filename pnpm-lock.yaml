@@ -9,13 +9,13 @@ importers:
   .:
     dependencies:
       '@tauri-apps/api':
-        specifier: ^2
+        specifier: ^2.11.1
         version: 2.11.1
       '@tauri-apps/plugin-dialog':
         specifier: ^2.7.3
         version: 2.7.3
       '@tauri-apps/plugin-opener':
-        specifier: ^2
+        specifier: ^2.5.5
         version: 2.5.5
       clsx:
         specifier: ^2.1.1
@@ -24,41 +24,41 @@ importers:
         specifier: ^4.4.0
         version: 4.4.0
       lucide-react:
-        specifier: ^1.43.0
+        specifier: ^1.46.0
         version: 1.46.0(react@19.3.0)
       react:
-        specifier: ^19.1.0
+        specifier: ^19.3.0
         version: 19.3.0
       react-dom:
-        specifier: ^19.1.0
+        specifier: ^19.3.0
         version: 19.3.0(react@19.3.0)
       recharts:
         specifier: ^3.10.1
         version: 3.10.1(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-is@19.3.0)(react@19.3.0)(redux@5.0.1)
       tailwind-merge:
-        specifier: ^3.6.0
+        specifier: ^3.7.0
         version: 3.7.0
       zustand:
         specifier: ^5.0.15
         version: 5.0.15(@types/react@19.3.0)(immer@11.1.18)(react@19.3.0)(use-sync-external-store@1.7.0(react@19.3.0))
     devDependencies:
       '@tauri-apps/cli':
-        specifier: ^2
+        specifier: ^2.11.4
         version: 2.11.4
       '@types/node':
-        specifier: ^26.5.0
+        specifier: ^26.5.1
         version: 26.5.1
       '@types/react':
-        specifier: ^19.1.8
+        specifier: ^19.3.0
         version: 19.3.0
       '@types/react-dom':
-        specifier: ^19.1.6
+        specifier: ^19.3.0
         version: 19.3.0(@types/react@19.3.0)
       '@vitejs/plugin-react':
-        specifier: ^6.0.2
+        specifier: ^6.1.1
         version: 6.1.1(vite@8.3.0(@types/node@26.5.1)(esbuild@0.28.2)(tsx@4.23.13))
       autoprefixer:
-        specifier: ^10.5.5
+        specifier: ^10.6.0
         version: 10.6.0(postcss@8.5.28)
       postcss:
         specifier: ^8.5.28
@@ -70,10 +70,10 @@ importers:
         specifier: ^4.23.13
         version: 4.23.13
       typescript:
-        specifier: ^7.0
+        specifier: ^7.0.2
         version: 7.0.2
       vite:
-        specifier: ^8.0.16
+        specifier: ^8.3.0
         version: 8.3.0(@types/node@26.5.1)(esbuild@0.28.2)(tsx@4.23.13)
 
 packages:
