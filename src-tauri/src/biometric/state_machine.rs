@@ -54,34 +54,82 @@ impl StateClassifier {
         let hr = hr.unwrap_or(self.baseline.resting_hr);
         let mov = movement.unwrap_or(0.0);
 
-        // State inference rules
-        let instant_state = if is_nighttime && mov < 0.05 && hr < (self.baseline.sleep_hr + 4.0) {
-            if hr < self.baseline.sleep_hr - 2.0 {
-                InferredState::SleepDeep
-            } else if hr < self.baseline.sleep_hr + 2.0 {
-                InferredState::SleepLight
-            } else {
-                InferredState::SleepOnset
-            }
-        } else if hr > (self.baseline.resting_hr + 12.0) && mov < 0.15 {
-            InferredState::Stressed
-        } else if hr < (self.baseline.resting_hr - 3.0) && mov < 0.1 {
-            InferredState::Relaxed
-        } else if hr <= (self.baseline.daytime_hr + 3.0) && mov < 0.1 {
-            if let Some(h) = hrv {
-                if h > 50.0 {
-                    InferredState::FocusCalm
+        // State inference with deadbands (hysteresis)
+        // Entry thresholds vs Exit thresholds prevent jitter around boundary points
+        let instant_state = match self.current_state {
+            InferredState::SleepDeep => {
+                // Exit deep sleep if HR rises above sleep_hr + 1.0 or movement occurs
+                if mov >= 0.08 || hr > (self.baseline.sleep_hr + 1.0) {
+                    InferredState::SleepLight
                 } else {
-                    InferredState::FocusDeep
+                    InferredState::SleepDeep
                 }
-            } else {
-                InferredState::FocusDeep
             }
-        } else {
-            InferredState::Awake
+            InferredState::SleepLight => {
+                if mov < 0.04 && hr <= (self.baseline.sleep_hr - 2.0) {
+                    InferredState::SleepDeep
+                } else if mov >= 0.15 || hr > (self.baseline.sleep_hr + 8.0) {
+                    InferredState::Awake
+                } else {
+                    InferredState::SleepLight
+                }
+            }
+            InferredState::SleepOnset => {
+                if mov < 0.04 && hr <= self.baseline.sleep_hr {
+                    InferredState::SleepLight
+                } else if mov >= 0.20 || hr > (self.baseline.sleep_hr + 10.0) {
+                    InferredState::Awake
+                } else {
+                    InferredState::SleepOnset
+                }
+            }
+            InferredState::Stressed => {
+                // Exit stressed only when HR drops well below stress boundary (deadband of 4 BPM)
+                if hr <= (self.baseline.resting_hr + 6.0) {
+                    InferredState::Awake
+                } else {
+                    InferredState::Stressed
+                }
+            }
+            InferredState::Relaxed => {
+                // Exit relaxed when HR rises above resting_hr
+                if hr >= self.baseline.resting_hr {
+                    InferredState::Awake
+                } else {
+                    InferredState::Relaxed
+                }
+            }
+            _ => {
+                // Default / Awake state evaluation:
+                if is_nighttime && mov < 0.05 && hr < (self.baseline.sleep_hr + 4.0) {
+                    if hr < self.baseline.sleep_hr - 2.0 {
+                        InferredState::SleepDeep
+                    } else if hr < self.baseline.sleep_hr + 2.0 {
+                        InferredState::SleepLight
+                    } else {
+                        InferredState::SleepOnset
+                    }
+                } else if hr > (self.baseline.resting_hr + 12.0) && mov < 0.15 {
+                    InferredState::Stressed
+                } else if hr < (self.baseline.resting_hr - 4.0) && mov < 0.1 {
+                    InferredState::Relaxed
+                } else if hr <= (self.baseline.daytime_hr + 3.0) && mov < 0.1 {
+                    if let Some(h) = hrv {
+                        if h > 50.0 {
+                            InferredState::FocusCalm
+                        } else {
+                            InferredState::FocusDeep
+                        }
+                    } else {
+                        InferredState::FocusDeep
+                    }
+                } else {
+                    InferredState::Awake
+                }
+            }
         };
 
-        // Apply hysteresis: only transition if candidate remains steady
+        // Apply temporal dwell filtering: require consecutive cycles to confirm transition
         if instant_state == self.current_state {
             self.candidate_state = instant_state;
             self.candidate_count = 0;
@@ -132,5 +180,28 @@ mod tests {
         // Cycle 3 - meets threshold
         let (state, _) = classifier.classify(Some(90.0), Some(40.0), Some(0.0), false);
         assert_eq!(state, InferredState::Stressed);
+    }
+
+    #[test]
+    fn test_hysteresis_deadband_stability() {
+        let mut classifier = StateClassifier::new();
+        // Transition to Stressed
+        for _ in 0..3 {
+            classifier.classify(Some(90.0), Some(30.0), Some(0.0), false);
+        }
+        assert_eq!(classifier.current_state, InferredState::Stressed);
+
+        // Slight HR drop to 77 BPM (baseline 65 + 12 = 77 threshold).
+        // Due to deadband, stress is maintained until <= baseline + 6 (71 BPM).
+        for _ in 0..5 {
+            classifier.classify(Some(75.0), Some(40.0), Some(0.0), false);
+        }
+        assert_eq!(classifier.current_state, InferredState::Stressed);
+
+        // Drop below exit threshold (<= 71 BPM) for 3 cycles
+        for _ in 0..3 {
+            classifier.classify(Some(68.0), Some(45.0), Some(0.0), false);
+        }
+        assert_eq!(classifier.current_state, InferredState::Awake);
     }
 }

@@ -60,7 +60,8 @@ pub fn run() {
             get_tuning_profile,
             save_tuning_profile,
             get_effectiveness_scores,
-            record_effectiveness_score
+            record_effectiveness_score,
+            evaluate_session
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

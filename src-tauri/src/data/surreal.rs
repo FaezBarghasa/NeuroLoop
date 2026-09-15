@@ -269,6 +269,52 @@ impl NeuroStore {
         Ok(sessions)
     }
 
+    pub async fn get_audio_session(
+        &self,
+        session_id: &str,
+    ) -> Result<Option<AudioSession>, surrealdb::Error> {
+        let clean_id = session_id.replace(['\'', '"', ';'], "");
+        let mut response = self
+            .db
+            .query(format!("SELECT * FROM audio_sessions:`{clean_id}`"))
+            .await?;
+        let raw: Vec<serde_json::Value> = response.take(0).unwrap_or_default();
+        let session = raw
+            .into_iter()
+            .next()
+            .and_then(|v| serde_json::from_value(v).ok());
+        Ok(session)
+    }
+
+    pub async fn get_samples_for_session(
+        &self,
+        start_iso: &str,
+        end_iso: Option<&str>,
+    ) -> Result<Vec<BiometricSample>, surrealdb::Error> {
+        let clean_start = start_iso.replace(['\'', '"', ';'], "");
+        let query_str = match end_iso {
+            Some(end) => {
+                let clean_end = end.replace(['\'', '"', ';'], "");
+                format!(
+                    "SELECT * FROM biometric_samples WHERE timestamp >= '{clean_start}' AND timestamp <= '{clean_end}' ORDER BY timestamp ASC"
+                )
+            }
+            None => {
+                format!(
+                    "SELECT * FROM biometric_samples WHERE timestamp >= '{clean_start}' ORDER BY timestamp ASC"
+                )
+            }
+        };
+
+        let mut response = self.db.query(query_str).await?;
+        let raw: Vec<serde_json::Value> = response.take(0).unwrap_or_default();
+        let samples: Vec<BiometricSample> = raw
+            .into_iter()
+            .filter_map(|v| serde_json::from_value(v).ok())
+            .collect();
+        Ok(samples)
+    }
+
     pub async fn record_state_event(
         &self,
         event: StateEvent,
