@@ -49,8 +49,9 @@ A single standalone JSON document encompassing all database tables and configura
 ---
 
 ## 3. Data Deletion Scopes
-Users can selectively or completely delete data from local SQLite storage:
-1. **Full Wipe**: Deletes all records across all tables, resets tuning profiles to factory defaults, and executes `VACUUM`.
+Users can selectively or completely delete data from local embedded SurrealDB storage:
+1. **Full Wipe**: Deletes all records across all tables, resets tuning profiles to factory defaults, and purges database state.
 2. **Biometrics Only**: Deletes `biometric_samples`, `sleep_stages`, and `sleep_sessions`.
 3. **Session History Only**: Deletes `audio_sessions`, `state_events`, and `focus_sessions`.
 4. **Feedback Only**: Deletes `user_feedback` and clears `effectiveness_scores`.
+

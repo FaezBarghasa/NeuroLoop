@@ -18,5 +18,6 @@
 ## 3. Core Deliverables & UX Pillars
 1. **Zero-Latency Audio**: Rust `cpal` audio DSP running on dedicated background threads.
 2. **Harmonic Consistency**: Mathematical lock to 432 Hz subharmonics (108, 144, 216, 324, 432 Hz).
-3. **Data Sovereignty**: Complete SQLite/SurrealDB embedded persistence with JSON/CSV/ZIP export.
+3. **Data Sovereignty**: Complete embedded SurrealDB persistence (`kv-surrealkv`) with JSON/CSV/ZIP export.
 4. **Adaptive Learning**: Continuous Bayesian preset weight personalization based on post-session feedback and autonomic response trajectories.
+
