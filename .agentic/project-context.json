@@ -1,0 +1,46 @@
+{
+  "cachedAt": "2026-09-16T12:41:11.626Z",
+  "configSnapshots": {
+    "package.json": 1789493870369.3564,
+    "tsconfig.json": 1788953619126.0183,
+    "vite.config.ts": 1789493892307.2217
+  },
+  "context": {
+    "languages": [
+      {
+        "lang": "TypeScript",
+        "confidence": 0.95,
+        "evidence": [
+          "package.json → devDependencies.typescript"
+        ]
+      },
+      {
+        "lang": "JavaScript",
+        "confidence": 0.8,
+        "evidence": [
+          "framework React → JavaScript"
+        ]
+      }
+    ],
+    "frameworks": [
+      {
+        "name": "React",
+        "confidence": 0.9,
+        "evidence": [
+          "package.json → dependencies.react"
+        ]
+      },
+      {
+        "name": "React",
+        "confidence": 0.9,
+        "evidence": [
+          "package.json → dependencies.react-dom"
+        ]
+      }
+    ],
+    "packageManager": "pnpm",
+    "testPatterns": [],
+    "entryPoints": [],
+    "ambiguity": "MEDIUM"
+  }
+}

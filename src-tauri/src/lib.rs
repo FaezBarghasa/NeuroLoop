@@ -24,6 +24,13 @@ pub fn run() {
             std::fs::create_dir_all(&app_data_dir).ok();
 
             let db_path = app_data_dir.join("neuroloop.db");
+            // Check if the path exists and is a file (e.g., from old SQLite version).
+            // SurrealKV requires a directory. If it's a file, rename it.
+            if db_path.is_file() {
+                let backup_path = app_data_dir.join("neuroloop.db.bak");
+                std::fs::rename(&db_path, backup_path).ok();
+            }
+
             let db_path_str = db_path.to_str().unwrap_or("./neuroloop_data/neuroloop.db");
 
             // Initialize SurrealDB local storage asynchronously in Tokio with robust fallback

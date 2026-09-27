@@ -7,7 +7,12 @@ pub async fn ingest_biometric_sample(
     store: State<'_, Arc<NeuroStore>>,
     sample: BiometricSample,
 ) -> Result<BiometricSample, String> {
-    store.ingest_sample(sample).await.map_err(|e| e.to_string())
+    let store = store.inner().clone();
+    let rt = store.rt.clone();
+    rt.spawn(async move { store.ingest_sample(sample).await })
+        .await
+        .unwrap()
+        .map_err(|e| e.to_string())
 }
 
 #[tauri::command]
@@ -15,9 +20,11 @@ pub async fn get_recent_biometrics(
     store: State<'_, Arc<NeuroStore>>,
     limit: usize,
 ) -> Result<Vec<BiometricSample>, String> {
-    store
-        .get_recent_samples(limit)
+    let store = store.inner().clone();
+    let rt = store.rt.clone();
+    rt.spawn(async move { store.get_recent_samples(limit).await })
         .await
+        .unwrap()
         .map_err(|e| e.to_string())
 }
 
@@ -26,9 +33,11 @@ pub async fn start_audio_session(
     store: State<'_, Arc<NeuroStore>>,
     session: AudioSession,
 ) -> Result<AudioSession, String> {
-    store
-        .start_audio_session(session)
+    let store = store.inner().clone();
+    let rt = store.rt.clone();
+    rt.spawn(async move { store.start_audio_session(session).await })
         .await
+        .unwrap()
         .map_err(|e| e.to_string())
 }
 
@@ -39,10 +48,16 @@ pub async fn end_audio_session(
     end_time: String,
     reason: String,
 ) -> Result<(), String> {
-    store
-        .end_audio_session(&session_id, &end_time, &reason)
-        .await
-        .map_err(|e| e.to_string())
+    let store = store.inner().clone();
+    let rt = store.rt.clone();
+    rt.spawn(async move {
+        store
+            .end_audio_session(&session_id, &end_time, &reason)
+            .await
+    })
+    .await
+    .unwrap()
+    .map_err(|e| e.to_string())
 }
 
 #[tauri::command]
@@ -50,13 +65,20 @@ pub async fn submit_user_feedback(
     store: State<'_, Arc<NeuroStore>>,
     feedback: UserFeedback,
 ) -> Result<UserFeedback, String> {
-    store
-        .add_user_feedback(feedback)
+    let store = store.inner().clone();
+    let rt = store.rt.clone();
+    rt.spawn(async move { store.add_user_feedback(feedback).await })
         .await
+        .unwrap()
         .map_err(|e| e.to_string())
 }
 
 #[tauri::command]
 pub async fn wipe_data(store: State<'_, Arc<NeuroStore>>, scope: String) -> Result<(), String> {
-    store.wipe_data(&scope).await.map_err(|e| e.to_string())
+    let store = store.inner().clone();
+    let rt = store.rt.clone();
+    rt.spawn(async move { store.wipe_data(&scope).await })
+        .await
+        .unwrap()
+        .map_err(|e| e.to_string())
 }

@@ -177,13 +177,33 @@ pub struct TuningProfileRecord {
 #[derive(Debug, Clone)]
 pub struct NeuroStore {
     pub db: Surreal<Db>,
+    pub rt: std::sync::Arc<tokio::runtime::Runtime>,
 }
 
 impl NeuroStore {
+    fn create_runtime() -> std::sync::Arc<tokio::runtime::Runtime> {
+        std::sync::Arc::new(
+            tokio::runtime::Builder::new_multi_thread()
+                .thread_name("neuroloop-db-worker")
+                .thread_stack_size(8 * 1024 * 1024)
+                .enable_all()
+                .build()
+                .expect("Failed to create custom Tokio runtime for SurrealDB"),
+        )
+    }
+
     pub async fn init_embedded(db_path: &str) -> Result<Self, surrealdb::Error> {
-        let db = Surreal::new::<SurrealKv>(db_path).await?;
-        db.use_ns("neuroloop").use_db("wellness").await?;
-        Ok(Self { db })
+        let rt = Self::create_runtime();
+        let db_path = db_path.to_string();
+        let db = rt
+            .spawn(async move {
+                let db = Surreal::new::<SurrealKv>(db_path).await?;
+                db.use_ns("neuroloop").use_db("wellness").await?;
+                Ok::<_, surrealdb::Error>(db)
+            })
+            .await
+            .map_err(|e| surrealdb::Error::thrown(e.to_string()))??;
+        Ok(Self { db, rt })
     }
 
     pub async fn ingest_sample(
@@ -547,10 +567,17 @@ impl NeuroStore {
     }
 
     pub async fn init_memory() -> Result<Self, surrealdb::Error> {
-        use surrealdb::engine::local::Mem;
-        let db = Surreal::new::<Mem>(()).await?;
-        db.use_ns("neuroloop").use_db("wellness").await?;
-        Ok(Self { db })
+        let rt = Self::create_runtime();
+        let db = rt
+            .spawn(async move {
+                use surrealdb::engine::local::Mem;
+                let db = Surreal::new::<Mem>(()).await?;
+                db.use_ns("neuroloop").use_db("wellness").await?;
+                Ok::<_, surrealdb::Error>(db)
+            })
+            .await
+            .map_err(|e| surrealdb::Error::thrown(e.to_string()))??;
+        Ok(Self { db, rt })
     }
 }
 
